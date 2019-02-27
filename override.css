@@ -1,0 +1,12 @@
+
+.notificationpanel {
+    background-color: #2A3F54 !important;
+}
+.tipCls {
+    background-color:rgb(255, 255, 255) !important;
+    flood-color: rgb(0, 0, 0) !important;
+}
+.notificationgrid {
+   line-height: 25px;
+   background:none;
+}
