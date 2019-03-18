@@ -55,10 +55,28 @@ Ext.define('PIS.view.main.Main', {
         title: 'Notifications',
         width: 300,
         split: true,
-        cls: 'x-panel-body-default notificationpanel',
-        scrollable: true,
+        cls: 'x-panel-body-default notificationpanel',             
         items: [{
-            xtype: 'notifications'
+            xtype: 'container',
+            layout: 'vbox',
+            scrollable: 'y',
+            maxHeight:600,
+            minHeight:600,
+            items: [
+                {
+                    xtype: 'notifications',                   
+                    margin: '2 0 10 2',
+                    padding: 2,
+                    width:290,
+                    flex:3,
+                    scrollable: 'y',
+                }, {
+                    xtype: 'announcement',                   
+                    margin: '0 0 10 0',
+                    width:300,
+                    flex:1,
+                    scrollable: 'y',
+                }]
         }]
     }, {
         region: 'south',
@@ -67,18 +85,19 @@ Ext.define('PIS.view.main.Main', {
         split: true,
         minHeight: 300,
         items: [
-        {
-            xtype: 'trackHistoryResult'
-        }]
+            {
+                xtype: 'trackHistoryResult'
+            }]
     }, {
         region: 'east',
         title: 'Overall Status',
         collapsible: true,
+        collapsed: true,
         split: true,
         width: 300,
         layout: 'fit',
-        items:[{
-            xtype:'statusChart'
+        items: [{
+            xtype: 'statusChart'
         }]
     }, {
         region: 'center',
@@ -86,7 +105,7 @@ Ext.define('PIS.view.main.Main', {
         layout: 'fit',
         items: [
             {
-                xtype:'historyMap'
+                xtype: 'historyMap'
             }
         ]
     }]

@@ -11,12 +11,11 @@ Ext.define('PIS.view.Notification.Notifications',{
     viewModel: {
         type: 'notification-notifications'
     },   
-    flex:1,
+    maxHeight:'70%',
     defaults:{
         xtype:'panel',
         collapsible:true,
-        collapsed:true,
-        title:'ok',
+        collapsed:true,       
         closable:true,
         style: {
             "word-wrap": 'break-word'
