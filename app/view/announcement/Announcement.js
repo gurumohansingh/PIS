@@ -18,11 +18,12 @@ Ext.define('PIS.view.announcement.Announcement',{
         closable:true,
         style: {
             "word-wrap": 'break-word'
-          }
-    } , 
-    items:[
-        
-    ],
+          },
+         listeners:{
+            close:'deleteAnnouncement' 
+         } 
+    }, 
+    items:[],
     tools:[{
         type:'plus',
         tooltip: 'Push new announcement',

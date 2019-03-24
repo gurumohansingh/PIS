@@ -126,6 +126,10 @@
         {
             "path": "app.js",
             "bundle": true
+        },
+        {
+            "path": "/app/view/util/Constant.js",
+            "bundle": true
         }
     ],
     /**

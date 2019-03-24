@@ -61,20 +61,19 @@ Ext.define('PIS.view.main.Main', {
             layout: 'vbox',
             scrollable: 'y',
             maxHeight:600,
-            minHeight:600,
             items: [
                 {
                     xtype: 'notifications',                   
                     margin: '2 0 10 2',
                     padding: 2,
-                    width:290,
+                    width:300,
                     flex:3,
                     scrollable: 'y',
                 }, {
                     xtype: 'announcement',                   
-                    margin: '0 0 10 0',
+                    margin: '2 0 40 2',
                     width:300,
-                    flex:1,
+                    flex:2,
                     scrollable: 'y',
                 }]
         }]
@@ -84,6 +83,9 @@ Ext.define('PIS.view.main.Main', {
         collapsible: true,
         split: true,
         minHeight: 300,
+        tools:[{
+           xtype:'trackHistoryfilter'
+        }],
         items: [
             {
                 xtype: 'trackHistoryResult'

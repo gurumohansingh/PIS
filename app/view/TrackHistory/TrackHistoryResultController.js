@@ -12,13 +12,12 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryResultController', {
         pagingStore.getProxy().setData(remoteStore.getRange());
         pagingStore.load();
         remoteStore.each(function(record,id){
-            debugger
             if(record.data.veh_lat_coordinate && record.data.veh_long_coordinate){
                  marks.push({lat: parseFloat(record.data.veh_lat_coordinate), lng: parseFloat(record.data.veh_long_coordinate)})
             }
            
-        })
-        Ext.GlobalEvents.fireEvent('showOnMap', {marks});
+        });
+        Ext.GlobalEvents.fireEvent('showOnMap', marks);
     },
 
     filterStore:function ( textField, newValue, oldValue, eOpts ) {

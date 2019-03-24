@@ -5,7 +5,7 @@ Ext.define('PIS.view.Notification.NotificationsController', {
     {
         this.populateNotification();
     },
-    populateNotification(){
+    populateNotification:function(){
         var view=this.getView();
         var notification=[
             "Drive is late",

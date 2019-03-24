@@ -9,12 +9,13 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryResultModel', {
                 } },
                 {name: 'veh_datetime_parsed', type: 'date', convert:function (value, record) {                    
                     return new Date(record.get('veh_datetime_parsed'));
-                } }
+                } 
+            }
             ],
             storeId:'trackHistory',           
             proxy: {
                 type: 'ajax',
-                url: '/jsondata.json', // url that will load data with respect to start and limit params
+                url: '', // url that will load data with respect to start and limit params
                 reader: {
                     type: 'json',
                     rootProperty: 'data',

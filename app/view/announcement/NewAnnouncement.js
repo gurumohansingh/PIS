@@ -29,12 +29,14 @@ Ext.define('PIS.view.announcement.NewAnnouncement',{
         },{
             xtype:'datefield',
             fieldLabel:'Start',
-            name:'start'
+            name:'start',
+            format:'Y-m-d'
         },
         {
            xtype:'datefield',
            fieldLabel:'End',
-           name:'end'
+           name:'end',
+           format:'Y-m-d'
         },{
             xtype:'button',
             text:'Submit',
