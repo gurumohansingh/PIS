@@ -25,6 +25,11 @@ Ext.define('PIS.view.announcement.Announcement',{
     }, 
     items:[],
     tools:[{
+        type:'refresh',
+        tooltip: 'Refresh Announcement',
+        // hidden:true,
+        handler:'loadAnnouncement'
+    },{
         type:'plus',
         tooltip: 'Push new announcement',
         // hidden:true,

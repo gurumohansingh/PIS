@@ -10,6 +10,7 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryFilter', {
         margin:'0 0 0 5px'  
     },
     fieldLabel: 'Filters',
+    reference:'trackHistoryfilter',
     items: [        
         {
             xtype: 'combo',
@@ -32,6 +33,7 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryFilter', {
             queryMode:'local',
             allowBlank:false,
             width: 200,
+            name:'trainNumber',
             bind:{
                 store:'{trains}'
             }
@@ -48,7 +50,7 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryFilter', {
         {
             xtype: 'datefield',           
             fieldLabel: 'Start',
-            format:'d/m/Y',
+            format: 'Y-m-d',
             name:'startDate',
             vtype:'daterange',
             endDate:'endDate',
@@ -59,6 +61,7 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryFilter', {
         },{
             xtype: 'timefield',
             format:'H:i:s',
+            name:'startDateTime',
             reference:'startDateTime',
             minValue: '00:00:00',
             maxValue: '24:00:00',
@@ -71,7 +74,7 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryFilter', {
             xtype: 'datefield',            
             fieldLabel: 'End',                                   
             maxValue: new Date(),
-            format: 'd-M-Y',
+            format: 'Y-m-d',
             name:'endDate',
             vtype:'daterange',
             startDate:'startDate',
@@ -82,6 +85,7 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryFilter', {
         {
             xtype: 'timefield',
             format:'H:i:s',
+            name:'endDateTime',
             minValue: '00:00:00',
             maxValue: '24:00:00',
             reference:'endDateTime',
@@ -92,8 +96,9 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryFilter', {
         {
             xtype:'button',
             text:'Search',
-           // formBind: true, //only enabled once the form is valid
-           // disabled: true,
+            reference:'SearchBtn',
+            formBind: true, //only enabled once the form is valid
+            disabled: true,
             handler:'loadHistorydata'
         },
         {

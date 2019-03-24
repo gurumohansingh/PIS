@@ -32,25 +32,30 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryResultController', {
         remoteStore.clearFilter();
         newValue=newValue.toUpperCase();
         remoteStore.filterBy(function(record, id){
-            return (record.get('veh_speed') && record.get('veh_speed').toUpperCase().indexOf(newValue)!==-1)
-                    || (record.get('platenum') && record.get('platenum').toUpperCase().indexOf(newValue)!==-1)
-                    || (record.get('veh_status') && record.get('veh_status').toUpperCase().indexOf(newValue)!==-1)
+            return (record.get('vehspeed') && record.get('vehspeed').toUpperCase().indexOf(newValue)!==-1)
+                    || (record.get('setnumber') && record.get('setnumber').toUpperCase().indexOf(newValue)!==-1)
+                    || (record.get('vehstatus') && record.get('vehstatus').toUpperCase().indexOf(newValue)!==-1)
+                    || (record.get('lat') && record.get('lat').toUpperCase().indexOf(newValue)!==-1)
+                    || (record.get('long') && record.get('long').toUpperCase().indexOf(newValue)!==-1)
         });  
         pagingStore.getProxy().setData(remoteStore.getRange());
         pagingStore.load();
     }
     ,
     toggelLive:function( checkBox, newValue, oldValue, eOpts )  {
-        var startDate=this.getView().lookupReference('startDate');
-        var endDate=this.getView().lookupReference('endDate');
-        var startDateTime=this.getView().lookupReference('startDateTime');
-        var endDateTime=this.getView().lookupReference('endDateTime');
+        var startDate=this.getView().lookupReference('startDate'),
+            endDate=this.getView().lookupReference('endDate'),
+            startDateTime=this.getView().lookupReference('startDateTime'),
+            endDateTime=this.getView().lookupReference('endDateTime'),
+            SearchBtn=this.getView().lookupReference('SearchBtn')
         if(newValue==true)
         {
             startDate.setDisabled(true);
             endDate.setDisabled(true);
             startDateTime.setDisabled(true);
             endDateTime.setDisabled(true);
+            SearchBtn.setDisabled(true);
+            Ext.GlobalEvents.fireEvent('liveTracking',true);
         }
         else
         {
@@ -58,17 +63,26 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryResultController', {
             endDate.setDisabled(false);
             startDateTime.setDisabled(false);
             endDateTime.setDisabled(false);
-            
+            SearchBtn.setDisabled(false);
+            Ext.GlobalEvents.fireEvent('liveTracking',false);
         }
     },
     loadHistorydata:function()
-    {
+    {      
         
-        var me=this;
-        var trackHistoryRemote=  me.getViewModel().getStore('trackHistory');
-        trackHistoryRemote.getProxy().setUrl('http://47.254.213.69:8080/get_data?start=2019-03-22 17:00:00&end=2019-03-23 17:30:05&setnum=SCS 26');
-        trackHistoryRemote.on('load',this.loadPagingStore,this);
-        trackHistoryRemote.load();      
+            var me=this,view=me.getView();
+            if(view.lookupReference('trackHistoryfilter').getForm().isValid()){
+            var form=view.lookupReference('trackHistoryfilter').getForm().getValues();
+            var trainNumber=form.trainNumber;
+            var start=form.startDate.concat(" ",form.startDateTime),
+            end=form.endDate.concat(" ",form.endDateTime)
+            
+            var trackHistoryRemote=  me.getViewModel().getStore('trackHistory');
+            trackHistoryRemote.getProxy().setUrl('http://47.254.213.69:8080/get_data');
+            trackHistoryRemote.getProxy().extraParams={start:start, end:end, setnum:trainNumber}
+            trackHistoryRemote.on('load',this.loadPagingStore,this);
+            trackHistoryRemote.load();
+        }     
     },
     getTrains:function(){
         var me=this,vm=me.getViewModel(),view=me.getView();

@@ -14,6 +14,7 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryResult', {
     },
     plugins: 'gridfilters',
     reference:'trackHistoryResult',
+    emptyText:'No record round. Please choose filter and search again.',
     bind: {
         store: '{trackHistoryPaging}'
     },
@@ -29,7 +30,7 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryResult', {
         dataIndex: 'timestamp',
         flex: 1,
         xtype: 'datecolumn',   
-        format:'d-m-Y g:i:s',
+        format:'Y-m-d H:i:s',
         filter: {           
             type: 'date'
         }

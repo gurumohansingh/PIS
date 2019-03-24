@@ -34,8 +34,7 @@ Ext.define('PIS.view.announcement.AnnouncementController', {
             }
         }); 
     },
-    deleteAnnouncement:function(panel, eOpts){
-        debugger     
+    deleteAnnouncement:function(panel, eOpts){             
         var id=panel.panelId,me=this;
          Ext.Ajax.request({
             url:ENDPOINT_HOST+"delete_announcement?id="+id,

@@ -3,7 +3,13 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryResultModel', {
     alias: 'viewmodel.trackhistory-trackhistoryresult',
     stores:{
         trackHistory:{
-           
+            fields: [              
+                {name: 'timestamp', type: 'date', 
+                convert:function (value, record) {
+                    var datetime=value.split("T");                    
+                    return new Date(datetime[0].concat(" ",datetime[1].substring(0,10)))
+                } }
+            ],
             storeId:'trackHistory',           
             proxy: {
                 type: 'ajax',
@@ -34,7 +40,7 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryResultModel', {
                     rootProperty: 'data'
                 }
             },
-            pageSize: 100
+            pageSize: 1000
         },
         trains:{
             fields: [              
