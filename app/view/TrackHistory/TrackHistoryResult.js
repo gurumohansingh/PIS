@@ -18,15 +18,15 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryResult', {
         store: '{trackHistoryPaging}'
     },
     columns: [{
-        text: 'Train Num',
-        dataIndex: 'platenum',
+        text: 'Train Number',
+        dataIndex: 'setnumber',
         flex: 1,
         filter: {           
             type: 'string'
         }
     }, {
         text: 'DateTime',
-        dataIndex: 'veh_datetime_parsed',
+        dataIndex: 'timestamp',
         flex: 1,
         xtype: 'datecolumn',   
         format:'d-m-Y g:i:s',
@@ -35,24 +35,24 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryResult', {
         }
     }, {
         text: 'Speed',
-        dataIndex: 'veh_speed',
+        dataIndex: 'vehspeed',
         flex: 1,
         filter: {           
             type: 'number'
         }
     }, {
         text: 'Status',
-        dataIndex: 'veh_status',
+        dataIndex: 'vehstatus',
         flex: 1,
         filter: {           
             type: 'string'
         }
     }, {
         text: 'Location',
-        dataIndex: 'veh_long_coordinate',
+        dataIndex: 'long',
         flex: 1,
         renderer: function (value, metaData, record) {
-            return record.data.veh_long_coordinate +"-"+ record.data.veh_lat_coordinate;
+            return record.data.lat +"-"+ record.data.long;
         }
     }],
     dockedItems: [{

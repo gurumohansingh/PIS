@@ -2,22 +2,27 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryResultController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.trackhistory-trackhistoryresult',
     init:function(){
-        
+        this.getTrains();
+        var startDate=this.getView().lookupReference('startDate');
+        var endDate=this.getView().lookupReference('endDate');
+        var startDateTime=this.getView().lookupReference('startDateTime');
+        var endDateTime=this.getView().lookupReference('endDateTime');
     },
 
     loadPagingStore:function( remoteStore, records, successful, operation, eOpts ) 
     {   
-        var me=this,marks=[];
+        var me=this,data={},marks=[];
         var pagingStore=me.getViewModel().getStore('trackHistoryPaging');
         pagingStore.getProxy().setData(remoteStore.getRange());
         pagingStore.load();
         remoteStore.each(function(record,id){
-            if(record.data.veh_lat_coordinate && record.data.veh_long_coordinate){
-                 marks.push({lat: parseFloat(record.data.veh_lat_coordinate), lng: parseFloat(record.data.veh_long_coordinate)})
+            if(record.data.lat && record.data.long){
+                 marks.push({lat: parseFloat(record.data.lat), lng: parseFloat(record.data.long)})
             }
            
         });
-        Ext.GlobalEvents.fireEvent('showOnMap', marks);
+        data.marks=marks;
+        Ext.GlobalEvents.fireEvent('showOnMap', data);
     },
 
     filterStore:function ( textField, newValue, oldValue, eOpts ) {
@@ -38,23 +43,48 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryResultController', {
     toggelLive:function( checkBox, newValue, oldValue, eOpts )  {
         var startDate=this.getView().lookupReference('startDate');
         var endDate=this.getView().lookupReference('endDate');
+        var startDateTime=this.getView().lookupReference('startDateTime');
+        var endDateTime=this.getView().lookupReference('endDateTime');
         if(newValue==true)
         {
             startDate.setDisabled(true);
             endDate.setDisabled(true);
+            startDateTime.setDisabled(true);
+            endDateTime.setDisabled(true);
         }
         else
         {
             startDate.setDisabled(false);
             endDate.setDisabled(false);
+            startDateTime.setDisabled(false);
+            endDateTime.setDisabled(false);
+            
         }
     },
     loadHistorydata:function()
     {
+        
         var me=this;
         var trackHistoryRemote=  me.getViewModel().getStore('trackHistory');
-        trackHistoryRemote.on('load',this.loadPagingStore,this)
-        trackHistoryRemote.load();        
+        trackHistoryRemote.getProxy().setUrl('http://47.254.213.69:8080/get_data?start=2019-03-22 17:00:00&end=2019-03-23 17:30:05&setnum=SCS 26');
+        trackHistoryRemote.on('load',this.loadPagingStore,this);
+        trackHistoryRemote.load();      
+    },
+    getTrains:function(){
+        var me=this,vm=me.getViewModel(),view=me.getView();
+        var trainStore=vm.getStore('trains');               
+        Ext.Ajax.request({
+            url:ENDPOINT_HOST+"get_setnum",
+            method:'GET',
+            cors: true,
+            useDefaultXhrHeader: false,
+            success:function(result){
+              trainStore.loadData(Ext.JSON.decode(Ext.JSON.decode(result.responseText)),false);
+            },
+            failure: function(error){
+               console.log('Load trail List failed. Please try again.');
+            }
+        })
     }
     
 });

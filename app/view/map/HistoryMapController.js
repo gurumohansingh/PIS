@@ -10,7 +10,8 @@ Ext.define('PIS.view.map.HistoryMapController', {
     {
       var map=this.getView().gmap;
     },
-    addLine:function(data){      
+    addLine:function(data){
+      debugger
       var map=this.getView().lookupReference('googlemap').gmap;
       var lineSymbol = {
         path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW

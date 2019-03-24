@@ -52,40 +52,19 @@ Ext.define('PIS.view.main.Main', {
     }, {
         region: 'west',
         collapsible: true,
-        title: 'Notifications',
         width: 300,
         split: true,
-        cls: 'x-panel-body-default notificationpanel',             
+        cls: 'x-panel-body-default notificationpanel',
+        layout:'fit',
         items: [{
-            xtype: 'container',
-            layout: 'vbox',
-            scrollable: 'y',
-            maxHeight:600,
-            items: [
-                {
-                    xtype: 'notifications',                   
-                    margin: '2 0 10 2',
-                    padding: 2,
-                    width:300,
-                    flex:3,
-                    scrollable: 'y',
-                }, {
-                    xtype: 'announcement',                   
-                    margin: '2 0 40 2',
-                    width:300,
-                    flex:2,
-                    scrollable: 'y',
-                }]
-        }]
+            xtype: 'leftPanel'
+           }]
     }, {
         region: 'south',
         title: 'Filter Data',
         collapsible: true,
         split: true,
-        minHeight: 300,
-        tools:[{
-           xtype:'trackHistoryfilter'
-        }],
+        minHeight: 300,       
         items: [
             {
                 xtype: 'trackHistoryResult'

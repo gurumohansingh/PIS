@@ -3,36 +3,29 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryResultModel', {
     alias: 'viewmodel.trackhistory-trackhistoryresult',
     stores:{
         trackHistory:{
-            fields: [              
-                {name: 'platenum', type: 'string', convert:function (value, record) {                    
-                    return record.data.vehicle[0].platenum;
-                } },
-                {name: 'veh_datetime_parsed', type: 'date', convert:function (value, record) {                    
-                    return new Date(record.get('veh_datetime_parsed'));
-                } 
-            }
-            ],
+           
             storeId:'trackHistory',           
             proxy: {
                 type: 'ajax',
+                method:'GET',
+                cors: true,
+                embeddedParams:false,
+                pageParam: false, //to remove param "page"
+                startParam: false, //to remove param "start"
+                limitParam: false, //to remove param "limit"
+                noCache: false, //to remove param "_dc"
+                useDefaultXhrHeader: false,
                 url: '', // url that will load data with respect to start and limit params
                 reader: {
                     type: 'json',
-                    rootProperty: 'data',
-                    totalProperty:"size"
+                    rootProperty: '',
+                    totalProperty:""
                 }
             }
         },
         
         trackHistoryPaging:{
-            fields: [              
-                {name: 'platenum', type: 'string', convert:function (value, record) {                    
-                    return record.data.vehicle[0].platenum;
-                } },
-                {name: 'veh_datetime_parsed', type: 'date', convert:function (value, record) {                    
-                    return new Date(record.get('veh_datetime_parsed'));
-                } }
-            ],
+           
             storeId:'trackHistoryPaging',
             proxy: {
                 type: 'memory',
@@ -42,6 +35,12 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryResultModel', {
                 }
             },
             pageSize: 100
+        },
+        trains:{
+            fields: [              
+                {name: 'setnum', type: 'string'}
+            ],
+            storeId:'trains'
         }
     }
 

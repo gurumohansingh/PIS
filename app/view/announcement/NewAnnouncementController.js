@@ -21,9 +21,9 @@ Ext.define('PIS.view.announcement.NewAnnouncementController', {
             failure: function(error){
                 Ext.Msg.alert('Create Announcement','Create Announcement failed.');
             }
-
-        })      
-
+        })
+    },
+    close:function(){
+        this.getView().close();
     }
-
 });

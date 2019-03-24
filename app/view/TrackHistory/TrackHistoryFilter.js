@@ -26,15 +26,15 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryFilter', {
         },
         {
             xtype: 'combo',
-            displayField: 'name',
-            valueField: 'value',
+            displayField: 'setnum',
+            valueField: 'setnum',
             emptyText:'select',
+            queryMode:'local',
+            allowBlank:false,
             width: 200,
-            store: {
-                data: [
-                    { name: 'WSC 5025', value: "WSC 5025" }]
-            },
-            listeners:{}
+            bind:{
+                store:'{trains}'
+            }
         },
         {
             xtype: 'checkbox',
@@ -53,12 +53,16 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryFilter', {
             vtype:'daterange',
             endDate:'endDate',
             reference:'startDate',
+            allowBlank:false,
             width:200
 
         },{
-            xtype: 'timefield',          
-            minValue: '00:00 AM',
-            maxValue: '00:00 PM',
+            xtype: 'timefield',
+            format:'H:i:s',
+            reference:'startDateTime',
+            minValue: '00:00:00',
+            maxValue: '24:00:00',
+            allowBlank:false,
             increment: 60,
             anchor: '100%',
             width:100
@@ -72,18 +76,24 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryFilter', {
             vtype:'daterange',
             startDate:'startDate',
             reference:'endDate',
+            allowBlank:false,
             width:200
         },
         {
-            xtype: 'timefield',          
-            minValue: '00:00 AM',
-            maxValue: '00:00 PM',
-            increment: 30,
+            xtype: 'timefield',
+            format:'H:i:s',
+            minValue: '00:00:00',
+            maxValue: '24:00:00',
+            reference:'endDateTime',
+            allowBlank:false,
+            increment: 60,
             width:100
         },
         {
             xtype:'button',
-            text:'Submit',
+            text:'Search',
+           // formBind: true, //only enabled once the form is valid
+           // disabled: true,
             handler:'loadHistorydata'
         },
         {
@@ -93,7 +103,6 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryFilter', {
             listeners:{
                 change:'filterStore'
             }
-        }
-
+        }     
     ]
 });

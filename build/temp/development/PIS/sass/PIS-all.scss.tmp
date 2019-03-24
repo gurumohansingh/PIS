@@ -1193,6 +1193,9 @@ $include-pis-view-main-mainmodel: dynamic(true);;
 $include-pis-view-map-historymap: dynamic(true);;
 $include-pis-view-map-historymapcontroller: dynamic(true);;
 $include-pis-view-map-historymapmodel: dynamic(true);;
+$include-pis-view-panel-leftpanel: dynamic(true);;
+$include-pis-view-panel-leftpanelcontroller: dynamic(true);;
+$include-pis-view-panel-leftpanelmodel: dynamic(true);;
 $output-paths: ("path": "../../classic/resources", "shared": "../../resources");
 
 /* ======================== ETC ======================== */

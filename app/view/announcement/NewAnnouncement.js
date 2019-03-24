@@ -11,16 +11,18 @@ Ext.define('PIS.view.announcement.NewAnnouncement',{
     viewModel: {
         type: 'announcement-newannouncement'
     },
+    title:'New Announcement',
     modal:true,
     items:[{
         xtype:'form',
         layout:'vbox',
-        reference:'newAnnouncement',
-       
+        buttonAlign : 'center', 
+        reference:'newAnnouncement',       
         defaults:{
             width:300,
             labelWidth:70,
             margin:15,
+            allowBlank:false
         },
         items:[{
             xtype:'textfield',
@@ -37,10 +39,15 @@ Ext.define('PIS.view.announcement.NewAnnouncement',{
            fieldLabel:'End',
            name:'end',
            format:'Y-m-d'
-        },{
-            xtype:'button',
-            text:'Submit',
+        }],
+        buttons: [{
+            text: 'Submit',
+            formBind: true, //only enabled once the form is valid
+            disabled: true,
             handler:'addAnnouncement'
+        },{
+            text:'Cancel',
+            handler:'close'
         }]
     }]
     
