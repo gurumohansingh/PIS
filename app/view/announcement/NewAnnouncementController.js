@@ -8,7 +8,7 @@ Ext.define('PIS.view.announcement.NewAnnouncementController', {
         var formdata=view.lookupReference('newAnnouncement').getForm().getValues();
 
         Ext.Ajax.request({
-            url:ENDPOINT_HOST+"create_announcement",
+            url:PIS.Constants.ENDPOINT_HOST+"create_announcement",
             method:'POST',
             params:formdata,
             cors: true,

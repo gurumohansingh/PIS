@@ -17,7 +17,7 @@ Ext.define('PIS.view.announcement.AnnouncementController', {
         var me=this, view=me.getView();
         view.removeAll();
         Ext.Ajax.request({
-            url:ENDPOINT_HOST+"get_announcement_cc",
+            url:PIS.Constants.ENDPOINT_HOST+"get_announcement_cc",
             method: 'GET',
             cors: true,
             useDefaultXhrHeader: false,                     
@@ -37,7 +37,7 @@ Ext.define('PIS.view.announcement.AnnouncementController', {
     deleteAnnouncement:function(panel, eOpts){             
         var id=panel.panelId,me=this;
          Ext.Ajax.request({
-            url:ENDPOINT_HOST+"delete_announcement?id="+id,
+            url:PIS.Constants.ENDPOINT_HOST+"delete_announcement?id="+id,
             method: 'GET',
             cors: true,
             useDefaultXhrHeader: false,                   

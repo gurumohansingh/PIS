@@ -1,6 +1,6 @@
 $app-name:  dynamic( 'PIS' );
 $image-search-path: 'F:/projects/zaru/PIS/build/production/PIS/classic/resources';
-$theme-name:  dynamic( 'theme-triton' );
+$theme-name:  dynamic( 'theme-gray' );
 $include-ext-abstractcomponent: dynamic(true);;
 $include-ext-abstractcontainer: dynamic(true);;
 $include-ext-abstractmanager: dynamic(true);;
@@ -236,6 +236,7 @@ $include-ext-chart-theme-sky: dynamic(true);;
 $include-ext-chart-theme-skygradients: dynamic(true);;
 $include-ext-chart-theme-yellow: dynamic(true);;
 $include-ext-chart-theme-yellowgradients: dynamic(true);;
+$include-ext-classic-toolbar-toolbar: dynamic(true);;
 $include-ext-container-buttongroup: dynamic(true);;
 $include-ext-container-container: dynamic(true);;
 $include-ext-container-dockingcontainer: dynamic(true);;
@@ -939,35 +940,11 @@ $include-ext-state-stateful: dynamic(true);;
 $include-ext-tab-bar: dynamic(true);;
 $include-ext-tab-panel: dynamic(true);;
 $include-ext-tab-tab: dynamic(true);;
-$include-ext-theme-neptune-component: dynamic(true);;
-$include-ext-theme-neptune-container-buttongroup: dynamic(true);;
-$include-ext-theme-neptune-form-field-htmleditor: dynamic(true);;
-$include-ext-theme-neptune-grid-roweditor: dynamic(true);;
-$include-ext-theme-neptune-grid-column-rownumberer: dynamic(true);;
-$include-ext-theme-neptune-layout-component-dock: dynamic(true);;
-$include-ext-theme-neptune-menu-menu: dynamic(true);;
-$include-ext-theme-neptune-menu-separator: dynamic(true);;
-$include-ext-theme-neptune-panel-panel: dynamic(true);;
-$include-ext-theme-neptune-panel-table: dynamic(true);;
-$include-ext-theme-neptune-picker-month: dynamic(true);;
-$include-ext-theme-neptune-resizer-splitter: dynamic(true);;
-$include-ext-theme-neptune-toolbar-paging: dynamic(true);;
-$include-ext-theme-neptune-toolbar-toolbar: dynamic(true);;
-$include-ext-theme-triton-component: dynamic(true);;
-$include-ext-theme-triton-form-field-checkbox: dynamic(true);;
-$include-ext-theme-triton-grid-column-check: dynamic(true);;
-$include-ext-theme-triton-grid-column-column: dynamic(true);;
-$include-ext-theme-triton-grid-column-rownumberer: dynamic(true);;
-$include-ext-theme-triton-grid-plugin-rowexpander: dynamic(true);;
-$include-ext-theme-triton-grid-selection-spreadsheetmodel: dynamic(true);;
-$include-ext-theme-triton-list-treeitem: dynamic(true);;
-$include-ext-theme-triton-menu-item: dynamic(true);;
-$include-ext-theme-triton-menu-menu: dynamic(true);;
-$include-ext-theme-triton-picker-date: dynamic(true);;
-$include-ext-theme-triton-picker-month: dynamic(true);;
-$include-ext-theme-triton-resizer-splitter: dynamic(true);;
-$include-ext-theme-triton-selection-checkboxmodel: dynamic(true);;
-$include-ext-theme-triton-toolbar-paging: dynamic(true);;
+$include-ext-theme-classic-component: dynamic(true);;
+$include-ext-theme-classic-grid-column-widget: dynamic(true);;
+$include-ext-theme-classic-grid-plugin-editing: dynamic(true);;
+$include-ext-theme-classic-toolbar-breadcrumb: dynamic(true);;
+$include-ext-theme-gray-component: dynamic(true);;
 $include-ext-tip-quicktip: dynamic(true);;
 $include-ext-tip-quicktipmanager: dynamic(true);;
 $include-ext-tip-tip: dynamic(true);;
@@ -1185,6 +1162,8 @@ $include-geoext-mixin-symbolcheck: dynamic(true);;
 $include-geoext-util-layer: dynamic(true);;
 $include-geoext-util-version: dynamic(true);;
 $include-pis-application: dynamic(true);;
+$include-pis-constants: dynamic(true);;
+$include-pis-overrides-form-field-vtypes: dynamic(true);;
 $include-pis-store-personnel: dynamic(true);;
 $include-pis-view-component-mappanel: dynamic(true);;
 $include-pis-view-component-mappanelcontroller: dynamic(true);;
@@ -1195,12 +1174,28 @@ $include-pis-view-notification-notificationsmodel: dynamic(true);;
 $include-pis-view-status-overallstaus: dynamic(true);;
 $include-pis-view-status-overallstauscontroller: dynamic(true);;
 $include-pis-view-status-overallstausmodel: dynamic(true);;
+$include-pis-view-trackhistory-trackhistoryfilter: dynamic(true);;
 $include-pis-view-trackhistory-trackhistoryresult: dynamic(true);;
 $include-pis-view-trackhistory-trackhistoryresultcontroller: dynamic(true);;
 $include-pis-view-trackhistory-trackhistoryresultmodel: dynamic(true);;
+$include-pis-view-announcement-announcement: dynamic(true);;
+$include-pis-view-announcement-announcementcontroller: dynamic(true);;
+$include-pis-view-announcement-announcementmodel: dynamic(true);;
+$include-pis-view-announcement-newannouncement: dynamic(true);;
+$include-pis-view-announcement-newannouncementcontroller: dynamic(true);;
+$include-pis-view-announcement-newannouncementmodel: dynamic(true);;
+$include-pis-view-login-login: dynamic(true);;
+$include-pis-view-login-logincontroller: dynamic(true);;
+$include-pis-view-login-loginmodel: dynamic(true);;
 $include-pis-view-main-main: dynamic(true);;
 $include-pis-view-main-maincontroller: dynamic(true);;
 $include-pis-view-main-mainmodel: dynamic(true);;
+$include-pis-view-map-historymap: dynamic(true);;
+$include-pis-view-map-historymapcontroller: dynamic(true);;
+$include-pis-view-map-historymapmodel: dynamic(true);;
+$include-pis-view-panel-leftpanel: dynamic(true);;
+$include-pis-view-panel-leftpanelcontroller: dynamic(true);;
+$include-pis-view-panel-leftpanelmodel: dynamic(true);;
 
 
 /* ======================== ETC ======================== */
@@ -1237,13 +1232,21 @@ $current-resource-root: $theme-neutral-resource-root;
 $relative-image-path-for-uis: $theme-neutral-resource-path;
 @import '../../../../../ext/classic/theme-neutral/sass/etc/all';
 
-/* including package theme-neptune */
-$theme-neptune-resource-root: '' !default;
-$theme-neptune-resource-path: 'images' !default;
-$current-package: 'theme-neptune';
-$current-resource-root: $theme-neptune-resource-root;
-$relative-image-path-for-uis: $theme-neptune-resource-path;
-@import '../../../../../ext/classic/theme-neptune/sass/etc/all';
+/* including package theme-classic */
+$theme-classic-resource-root: '' !default;
+$theme-classic-resource-path: 'images' !default;
+$current-package: 'theme-classic';
+$current-resource-root: $theme-classic-resource-root;
+$relative-image-path-for-uis: $theme-classic-resource-path;
+@import '../../../../../ext/classic/theme-classic/sass/etc/all';
+
+/* including package theme-gray */
+$theme-gray-resource-root: '' !default;
+$theme-gray-resource-path: 'images' !default;
+$current-package: 'theme-gray';
+$current-resource-root: $theme-gray-resource-root;
+$relative-image-path-for-uis: $theme-gray-resource-path;
+@import '../../../../../ext/classic/theme-gray/sass/etc/all';
 
 /* including package font-awesome */
 $font-awesome-resource-root: 'font-awesome' !default;
@@ -1252,14 +1255,6 @@ $current-package: 'font-awesome';
 $current-resource-root: $font-awesome-resource-root;
 $relative-image-path-for-uis: $font-awesome-resource-path;
 @import '../../../../../ext/packages/font-awesome/sass/etc/all';
-
-/* including package theme-triton */
-$theme-triton-resource-root: '' !default;
-$theme-triton-resource-path: 'images' !default;
-$current-package: 'theme-triton';
-$current-resource-root: $theme-triton-resource-root;
-$relative-image-path-for-uis: $theme-triton-resource-path;
-@import '../../../../../ext/classic/theme-triton/sass/etc/all';
 
 /* including package charts */
 $charts-resource-root: 'charts' !default;
@@ -1361,97 +1356,78 @@ $relative-image-path-for-uis: $theme-neutral-resource-path;
 @import '../../../../../ext/classic/theme-neutral/sass/var/view/MultiSelector';
 @import '../../../../../ext/classic/theme-neutral/sass/var/window/Toast';
 
-/* including package theme-neptune */
-$theme-neptune-resource-root: '' !default;
-$theme-neptune-resource-path: 'images' !default;
-$current-package: 'theme-neptune';
-$current-resource-root: $theme-neptune-resource-root;
-$relative-image-path-for-uis: $theme-neptune-resource-path;
-@import '../../../../../ext/classic/theme-neptune/sass/var/Component';
-@import '../../../../../ext/classic/theme-neptune/sass/var/LoadMask';
-@import '../../../../../ext/classic/theme-neptune/sass/var/ProgressBar';
-@import '../../../../../ext/classic/theme-neptune/sass/var/button/Button';
-@import '../../../../../ext/classic/theme-neptune/sass/var/panel/Tool';
-@import '../../../../../ext/classic/theme-neptune/sass/var/resizer/Splitter';
-@import '../../../../../ext/classic/theme-neptune/sass/var/toolbar/Toolbar';
-@import '../../../../../ext/classic/theme-neptune/sass/var/dd/StatusProxy';
-@import '../../../../../ext/classic/theme-neptune/sass/var/panel/Panel';
-@import '../../../../../ext/classic/theme-neptune/sass/var/container/ButtonGroup';
-@import '../../../../../ext/classic/theme-neptune/sass/var/window/Window';
-@import '../../../../../ext/classic/theme-neptune/sass/var/form/Labelable';
-@import '../../../../../ext/classic/theme-neptune/sass/var/form/field/Base';
-@import '../../../../../ext/classic/theme-neptune/sass/var/form/field/Text';
-@import '../../../../../ext/classic/theme-neptune/sass/var/form/field/Checkbox';
-@import '../../../../../ext/classic/theme-neptune/sass/var/form/FieldSet';
-@import '../../../../../ext/classic/theme-neptune/sass/var/toolbar/Paging';
-@import '../../../../../ext/classic/theme-neptune/sass/var/view/BoundList';
-@import '../../../../../ext/classic/theme-neptune/sass/var/picker/Date';
-@import '../../../../../ext/classic/theme-neptune/sass/var/form/field/Display';
-@import '../../../../../ext/classic/theme-neptune/sass/var/tip/Tip';
-@import '../../../../../ext/classic/theme-neptune/sass/var/picker/Color';
-@import '../../../../../ext/classic/theme-neptune/sass/var/form/field/Tag';
-@import '../../../../../ext/classic/theme-neptune/sass/var/form/field/Trigger';
-@import '../../../../../ext/classic/theme-neptune/sass/var/view/Table';
-@import '../../../../../ext/classic/theme-neptune/sass/var/grid/header/Container';
-@import '../../../../../ext/classic/theme-neptune/sass/var/grid/column/Column';
-@import '../../../../../ext/classic/theme-neptune/sass/var/grid/column/Action';
-@import '../../../../../ext/classic/theme-neptune/sass/var/grid/column/Check';
-@import '../../../../../ext/classic/theme-neptune/sass/var/grid/feature/Grouping';
-@import '../../../../../ext/classic/theme-neptune/sass/var/menu/Menu';
-@import '../../../../../ext/classic/theme-neptune/sass/var/grid/filters/Filters';
-@import '../../../../../ext/classic/theme-neptune/sass/var/grid/plugin/RowEditing';
-@import '../../../../../ext/classic/theme-neptune/sass/var/layout/container/Accordion';
-@import '../../../../../ext/classic/theme-neptune/sass/var/layout/container/Border';
-@import '../../../../../ext/classic/theme-neptune/sass/var/resizer/Resizer';
-@import '../../../../../ext/classic/theme-neptune/sass/var/selection/CheckboxModel';
-@import '../../../../../ext/classic/theme-neptune/sass/var/tab/Tab';
-@import '../../../../../ext/classic/theme-neptune/sass/var/tab/Bar';
-@import '../../../../../ext/classic/theme-neptune/sass/var/toolbar/Breadcrumb';
-@import '../../../../../ext/classic/theme-neptune/sass/var/tree/View';
-@import '../../../../../ext/classic/theme-neptune/sass/var/window/Toast';
+/* including package theme-classic */
+$theme-classic-resource-root: '' !default;
+$theme-classic-resource-path: 'images' !default;
+$current-package: 'theme-classic';
+$current-resource-root: $theme-classic-resource-root;
+$relative-image-path-for-uis: $theme-classic-resource-path;
+@import '../../../../../ext/classic/theme-classic/sass/var/Component';
+@import '../../../../../ext/classic/theme-classic/sass/var/LoadMask';
+@import '../../../../../ext/classic/theme-classic/sass/var/ProgressBar';
+@import '../../../../../ext/classic/theme-classic/sass/var/button/Button';
+@import '../../../../../ext/classic/theme-classic/sass/var/panel/Tool';
+@import '../../../../../ext/classic/theme-classic/sass/var/resizer/Splitter';
+@import '../../../../../ext/classic/theme-classic/sass/var/toolbar/Toolbar';
+@import '../../../../../ext/classic/theme-classic/sass/var/dd/StatusProxy';
+@import '../../../../../ext/classic/theme-classic/sass/var/panel/Panel';
+@import '../../../../../ext/classic/theme-classic/sass/var/container/ButtonGroup';
+@import '../../../../../ext/classic/theme-classic/sass/var/window/Window';
+@import '../../../../../ext/classic/theme-classic/sass/var/form/Labelable';
+@import '../../../../../ext/classic/theme-classic/sass/var/form/field/Base';
+@import '../../../../../ext/classic/theme-classic/sass/var/form/field/Text';
+@import '../../../../../ext/classic/theme-classic/sass/var/window/MessageBox';
+@import '../../../../../ext/classic/theme-classic/sass/var/form/FieldSet';
+@import '../../../../../ext/classic/theme-classic/sass/var/form/field/Spinner';
+@import '../../../../../ext/classic/theme-classic/sass/var/view/BoundList';
+@import '../../../../../ext/classic/theme-classic/sass/var/picker/Date';
+@import '../../../../../ext/classic/theme-classic/sass/var/form/field/Display';
+@import '../../../../../ext/classic/theme-classic/sass/var/tip/Tip';
+@import '../../../../../ext/classic/theme-classic/sass/var/picker/Color';
+@import '../../../../../ext/classic/theme-classic/sass/var/form/field/HtmlEditor';
+@import '../../../../../ext/classic/theme-classic/sass/var/form/field/Tag';
+@import '../../../../../ext/classic/theme-classic/sass/var/form/field/Trigger';
+@import '../../../../../ext/classic/theme-classic/sass/var/view/Table';
+@import '../../../../../ext/classic/theme-classic/sass/var/grid/header/Container';
+@import '../../../../../ext/classic/theme-classic/sass/var/grid/column/Column';
+@import '../../../../../ext/classic/theme-classic/sass/var/grid/column/Widget';
+@import '../../../../../ext/classic/theme-classic/sass/var/grid/feature/Grouping';
+@import '../../../../../ext/classic/theme-classic/sass/var/menu/Menu';
+@import '../../../../../ext/classic/theme-classic/sass/var/grid/plugin/Editing';
+@import '../../../../../ext/classic/theme-classic/sass/var/grid/plugin/RowEditing';
+@import '../../../../../ext/classic/theme-classic/sass/var/grid/plugin/RowExpander';
+@import '../../../../../ext/classic/theme-classic/sass/var/grid/property/Grid';
+@import '../../../../../ext/classic/theme-classic/sass/var/layout/container/Accordion';
+@import '../../../../../ext/classic/theme-classic/sass/var/layout/container/Border';
+@import '../../../../../ext/classic/theme-classic/sass/var/resizer/Resizer';
+@import '../../../../../ext/classic/theme-classic/sass/var/slider/Multi';
+@import '../../../../../ext/classic/theme-classic/sass/var/tab/Tab';
+@import '../../../../../ext/classic/theme-classic/sass/var/tab/Bar';
+@import '../../../../../ext/classic/theme-classic/sass/var/tree/View';
 
-/* including package theme-triton */
-$theme-triton-resource-root: '' !default;
-$theme-triton-resource-path: 'images' !default;
-$current-package: 'theme-triton';
-$current-resource-root: $theme-triton-resource-root;
-$relative-image-path-for-uis: $theme-triton-resource-path;
-@import '../../../../../ext/classic/theme-triton/sass/var/Component';
-@import '../../../../../ext/classic/theme-triton/sass/var/LoadMask';
-@import '../../../../../ext/classic/theme-triton/sass/var/ProgressBar';
-@import '../../../../../ext/classic/theme-triton/sass/var/button/Button';
-@import '../../../../../ext/classic/theme-triton/sass/var/panel/Tool';
-@import '../../../../../ext/classic/theme-triton/sass/var/resizer/Splitter';
-@import '../../../../../ext/classic/theme-triton/sass/var/toolbar/Toolbar';
-@import '../../../../../ext/classic/theme-triton/sass/var/panel/Panel';
-@import '../../../../../ext/classic/theme-triton/sass/var/container/ButtonGroup';
-@import '../../../../../ext/classic/theme-triton/sass/var/window/Window';
-@import '../../../../../ext/classic/theme-triton/sass/var/form/field/Base';
-@import '../../../../../ext/classic/theme-triton/sass/var/window/MessageBox';
-@import '../../../../../ext/classic/theme-triton/sass/var/form/field/Checkbox';
-@import '../../../../../ext/classic/theme-triton/sass/var/form/FieldSet';
-@import '../../../../../ext/classic/theme-triton/sass/var/view/BoundList';
-@import '../../../../../ext/classic/theme-triton/sass/var/picker/Date';
-@import '../../../../../ext/classic/theme-triton/sass/var/tip/Tip';
-@import '../../../../../ext/classic/theme-triton/sass/var/form/field/HtmlEditor';
-@import '../../../../../ext/classic/theme-triton/sass/var/form/field/Tag';
-@import '../../../../../ext/classic/theme-triton/sass/var/view/Table';
-@import '../../../../../ext/classic/theme-triton/sass/var/grid/header/Container';
-@import '../../../../../ext/classic/theme-triton/sass/var/grid/column/Column';
-@import '../../../../../ext/classic/theme-triton/sass/var/grid/column/Action';
-@import '../../../../../ext/classic/theme-triton/sass/var/grid/feature/Grouping';
-@import '../../../../../ext/classic/theme-triton/sass/var/menu/Menu';
-@import '../../../../../ext/classic/theme-triton/sass/var/grid/filters/Filters';
-@import '../../../../../ext/classic/theme-triton/sass/var/grid/locking/Lockable';
-@import '../../../../../ext/classic/theme-triton/sass/var/grid/plugin/RowExpander';
-@import '../../../../../ext/classic/theme-triton/sass/var/layout/container/Accordion';
-@import '../../../../../ext/classic/theme-triton/sass/var/layout/container/Border';
-@import '../../../../../ext/classic/theme-triton/sass/var/resizer/Resizer';
-@import '../../../../../ext/classic/theme-triton/sass/var/selection/CheckboxModel';
-@import '../../../../../ext/classic/theme-triton/sass/var/slider/Multi';
-@import '../../../../../ext/classic/theme-triton/sass/var/tab/Tab';
-@import '../../../../../ext/classic/theme-triton/sass/var/tab/Bar';
-@import '../../../../../ext/classic/theme-triton/sass/var/tree/View';
+/* including package theme-gray */
+$theme-gray-resource-root: '' !default;
+$theme-gray-resource-path: 'images' !default;
+$current-package: 'theme-gray';
+$current-resource-root: $theme-gray-resource-root;
+$relative-image-path-for-uis: $theme-gray-resource-path;
+@import '../../../../../ext/classic/theme-gray/sass/var/Component';
+@import '../../../../../ext/classic/theme-gray/sass/var/ProgressBar';
+@import '../../../../../ext/classic/theme-gray/sass/var/button/Button';
+@import '../../../../../ext/classic/theme-gray/sass/var/panel/Tool';
+@import '../../../../../ext/classic/theme-gray/sass/var/toolbar/Toolbar';
+@import '../../../../../ext/classic/theme-gray/sass/var/panel/Panel';
+@import '../../../../../ext/classic/theme-gray/sass/var/container/ButtonGroup';
+@import '../../../../../ext/classic/theme-gray/sass/var/window/Window';
+@import '../../../../../ext/classic/theme-gray/sass/var/form/FieldSet';
+@import '../../../../../ext/classic/theme-gray/sass/var/view/BoundList';
+@import '../../../../../ext/classic/theme-gray/sass/var/picker/Date';
+@import '../../../../../ext/classic/theme-gray/sass/var/tip/Tip';
+@import '../../../../../ext/classic/theme-gray/sass/var/form/field/Tag';
+@import '../../../../../ext/classic/theme-gray/sass/var/grid/column/Column';
+@import '../../../../../ext/classic/theme-gray/sass/var/menu/Menu';
+@import '../../../../../ext/classic/theme-gray/sass/var/layout/container/Accordion';
+@import '../../../../../ext/classic/theme-gray/sass/var/tab/Tab';
 
 /* including package ux */
 $ux-resource-root: 'ux' !default;
@@ -1660,48 +1636,20 @@ $relative-image-path-for-uis: $theme-neutral-resource-path;
 @import '../../../../../ext/classic/theme-neutral/sass/src/view/MultiSelector';
 @import '../../../../../ext/classic/theme-neutral/sass/src/window/Toast';
 
-/* including package theme-neptune */
-$theme-neptune-resource-root: '' !default;
-$theme-neptune-resource-path: 'images' !default;
-$current-package: 'theme-neptune';
-$current-resource-root: $theme-neptune-resource-root;
-$relative-image-path-for-uis: $theme-neptune-resource-path;
-@import '../../../../../ext/classic/theme-neptune/sass/src/button/Button';
-@import '../../../../../ext/classic/theme-neptune/sass/src/panel/Panel';
-@import '../../../../../ext/classic/theme-neptune/sass/src/form/field/File';
-@import '../../../../../ext/classic/theme-neptune/sass/src/form/field/HtmlEditor';
-@import '../../../../../ext/classic/theme-neptune/sass/src/grid/header/Container';
-@import '../../../../../ext/classic/theme-neptune/sass/src/grid/column/Column';
-@import '../../../../../ext/classic/theme-neptune/sass/src/resizer/Resizer';
-
-/* including package font-awesome */
-$font-awesome-resource-root: 'font-awesome' !default;
-$font-awesome-resource-path: 'font-awesome/images' !default;
-$current-package: 'font-awesome';
-$current-resource-root: $font-awesome-resource-root;
-$relative-image-path-for-uis: $font-awesome-resource-path;
-@import '../../../../../ext/packages/font-awesome/sass/src/all';
-
-/* including package font-ext */
-$font-ext-resource-root: 'font-ext' !default;
-$font-ext-resource-path: 'font-ext/images' !default;
-$current-package: 'font-ext';
-$current-resource-root: $font-ext-resource-root;
-$relative-image-path-for-uis: $font-ext-resource-path;
-@import '../../../../../ext/packages/font-ext/sass/src/all';
-
-/* including package theme-triton */
-$theme-triton-resource-root: '' !default;
-$theme-triton-resource-path: 'images' !default;
-$current-package: 'theme-triton';
-$current-resource-root: $theme-triton-resource-root;
-$relative-image-path-for-uis: $theme-triton-resource-path;
-@import '../../../../../ext/classic/theme-triton/sass/src/Component';
-@import '../../../../../ext/classic/theme-triton/sass/src/form/FieldSet';
-@import '../../../../../ext/classic/theme-triton/sass/src/form/field/Tag';
-@import '../../../../../ext/classic/theme-triton/sass/src/menu/Menu';
-@import '../../../../../ext/classic/theme-triton/sass/src/tab/Tab';
-@import '../../../../../ext/classic/theme-triton/sass/src/window/Toast';
+/* including package theme-classic */
+$theme-classic-resource-root: '' !default;
+$theme-classic-resource-path: 'images' !default;
+$current-package: 'theme-classic';
+$current-resource-root: $theme-classic-resource-root;
+$relative-image-path-for-uis: $theme-classic-resource-path;
+@import '../../../../../ext/classic/theme-classic/sass/src/dom/Element';
+@import '../../../../../ext/classic/theme-classic/sass/src/window/MessageBox';
+@import '../../../../../ext/classic/theme-classic/sass/src/form/field/HtmlEditor';
+@import '../../../../../ext/classic/theme-classic/sass/src/grid/column/Column';
+@import '../../../../../ext/classic/theme-classic/sass/src/grid/column/Widget';
+@import '../../../../../ext/classic/theme-classic/sass/src/layout/container/Accordion';
+@import '../../../../../ext/classic/theme-classic/sass/src/resizer/Resizer';
+@import '../../../../../ext/classic/theme-classic/sass/src/slider/Multi';
 
 /* including package ux */
 $ux-resource-root: 'ux' !default;
@@ -1730,6 +1678,14 @@ $relative-image-path-for-uis: $ux-resource-path;
 @import '../../../../../ext/packages/ux/classic/sass/src/grid/SubTable';
 @import '../../../../../ext/packages/ux/classic/sass/src/layout/ResponsiveColumn';
 @import '../../../../../ext/packages/ux/classic/sass/src/rating/Picker';
+
+/* including package font-awesome */
+$font-awesome-resource-root: 'font-awesome' !default;
+$font-awesome-resource-path: 'font-awesome/images' !default;
+$current-package: 'font-awesome';
+$current-resource-root: $font-awesome-resource-root;
+$relative-image-path-for-uis: $font-awesome-resource-path;
+@import '../../../../../ext/packages/font-awesome/sass/src/all';
 
 /* including package charts */
 $charts-resource-root: 'charts' !default;

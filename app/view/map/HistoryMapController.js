@@ -15,9 +15,9 @@ Ext.define('PIS.view.map.HistoryMapController', {
     var lineSymbol = {
       path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW
     };
-    if(FLIGHPATH){FLIGHPATH.setMap(null);}
+    if(PIS.Constants.FLIGHPATH){PIS.Constants.FLIGHPATH.setMap(null);}
       
-    FLIGHPATH = new google.maps.Polyline({
+    PIS.Constants.FLIGHPATH = new google.maps.Polyline({
       path: data.marks,
       geodesic: true,
       strokeColor: '#FF0000',
@@ -29,7 +29,7 @@ Ext.define('PIS.view.map.HistoryMapController', {
       }]
     });    
     map.setCenter(data.marks[0]),
-    FLIGHPATH.setMap(map);
+    PIS.Constants.FLIGHPATH.setMap(map);
 
   },
   liveTracking: function (onOff) {
@@ -48,7 +48,7 @@ Ext.define('PIS.view.map.HistoryMapController', {
     ws = new WebSocket('ws://47.254.213.69:8080/live');
     ws.onopen = function () {
       console.log("Websocket connected!");
-      if(FLIGHPATH){FLIGHPATH.setMap(null);}
+      if(PIS.Constants.FLIGHPATH){PIS.Constants.FLIGHPATH.setMap(null);}
       // Web Socket is connected, send data using send()
       // ws.send("Message to send");
     };

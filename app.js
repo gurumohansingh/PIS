@@ -9,7 +9,8 @@ Ext.application({
     extend: 'PIS.Application',
 
     requires: [
-        'PIS.view.main.Main'
+        'PIS.view.main.Main',
+        'PIS.Constants'
     ],
 
     // The name of the initial view to create. With the classic toolkit this class

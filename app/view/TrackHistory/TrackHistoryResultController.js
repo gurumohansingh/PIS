@@ -88,7 +88,7 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryResultController', {
         var me=this,vm=me.getViewModel(),view=me.getView();
         var trainStore=vm.getStore('trains');               
         Ext.Ajax.request({
-            url:ENDPOINT_HOST+"get_setnum",
+            url:PIS.Constants.ENDPOINT_HOST+"get_setnum",
             method:'GET',
             cors: true,
             useDefaultXhrHeader: false,
