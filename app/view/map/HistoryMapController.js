@@ -10,12 +10,14 @@ Ext.define('PIS.view.map.HistoryMapController', {
     var map = this.getView().gmap;
   },
   addLine: function (data) {
-
     var map = this.getView().lookupReference('googlemap').gmap;
+    //map.unbindAll()
     var lineSymbol = {
       path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW
     };
-    var flightPath = new google.maps.Polyline({
+    if(FLIGHPATH){FLIGHPATH.setMap(null);}
+      
+    FLIGHPATH = new google.maps.Polyline({
       path: data.marks,
       geodesic: true,
       strokeColor: '#FF0000',
@@ -25,13 +27,12 @@ Ext.define('PIS.view.map.HistoryMapController', {
         icon: lineSymbol,
         offset: '100%'
       }]
-    });
+    });    
     map.setCenter(data.marks[0]),
-      flightPath.setMap(map);
+    FLIGHPATH.setMap(map);
 
   },
   liveTracking: function (onOff) {
-    debugger
     if(!onOff && ws){
       ws.close();
       return ;
@@ -43,9 +44,11 @@ Ext.define('PIS.view.map.HistoryMapController', {
     var markerInfoStore = {};
     var infoWindowStore = {};
     var bounds;
+    var image = 'http://icons.iconarchive.com/icons/icons8/windows-8/24/Transport-Train-icon.png';
     ws = new WebSocket('ws://47.254.213.69:8080/live');
     ws.onopen = function () {
       console.log("Websocket connected!");
+      if(FLIGHPATH){FLIGHPATH.setMap(null);}
       // Web Socket is connected, send data using send()
       // ws.send("Message to send");
     };
@@ -107,7 +110,8 @@ Ext.define('PIS.view.map.HistoryMapController', {
         var marker = new google.maps.Marker({
           position: new google.maps.LatLng({ lat: lat_parsed, lng: long_parsed }),
           title: wsData.dev_IMEI + ": " + wsData.veh_speed + " (km/h)",
-          map: map
+          map: map,
+          icon:image
         });
         //Create new marker info window
 
@@ -128,7 +132,16 @@ Ext.define('PIS.view.map.HistoryMapController', {
     };
     ws.onclose = function () {
       // websocket is closed.
-      alert("Connection is closed...");
+      console.log("Connection is closed...");
+      removeAllLive();
     };
+    var removeAllLive=function(){
+      for (var key in markerStore){ 
+        markerStore[key].setMap(null);
+      }
+        markerStore = null;
+        markerInfoStore = null;
+        infoWindowStore = null;
+    }
   }
 });
