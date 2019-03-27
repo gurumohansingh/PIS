@@ -94,7 +94,7 @@ Ext.define('PIS.view.map.HistoryMapController', {
 
       lat_parsed = parseFloat(latDD) + parseFloat((latMM / 60).toFixed(7));
       long_parsed = parseFloat(longDDD) + parseFloat((longMM / 60).toFixed(7));
-      markerInfoStore[rcv_Imei] = '<font color="white"><div style="background-color:#2b2b2b; font-color:#"><p><strong>' + rcv_Imei + '</strong></p><p>Speed: ' + wsData.veh_speed + '</p><p>Coord: ' + lat_parsed + ' , ' + long_parsed + '</p><p>Last received:' + dateObject + '</p></div></font>';
+      markerInfoStore[rcv_Imei] = '<p><strong>' + rcv_Imei + '</strong></p><p>Speed: ' + wsData.veh_speed + '</p><p>Coord: ' + lat_parsed + ' , ' + long_parsed + '</p><p>Last received:' + dateObject + '</p>';
       
       if (markerStore.hasOwnProperty(rcv_Imei)) {
         infoWindowStore[rcv_Imei].setContent(markerInfoStore[rcv_Imei]);
@@ -109,7 +109,7 @@ Ext.define('PIS.view.map.HistoryMapController', {
         //Create new marker
         var marker = new google.maps.Marker({
           position: new google.maps.LatLng({ lat: lat_parsed, lng: long_parsed }),
-          title: wsData.dev_IMEI + ": " + wsData.veh_speed + " (km/h)",
+          title: wsData.set_num + "(" + wsData.train_num + ")",
           map: map,
           icon:image
         });
@@ -124,7 +124,7 @@ Ext.define('PIS.view.map.HistoryMapController', {
           infowindow.open(map, marker);
         });
 
-        infowindow.open(map, marker);
+        //infowindow.open(map, marker);
         infoWindowStore[rcv_Imei] = infowindow;
         markerStore[rcv_Imei] = marker;
 

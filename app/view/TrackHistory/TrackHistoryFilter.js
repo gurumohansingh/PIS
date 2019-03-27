@@ -15,6 +15,7 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryFilter', {
         {
             xtype: 'combo',
             displayField: 'name',
+            hidden:true,
             valueField: 'value',
             value:'Service',
             width: 200,

@@ -46,9 +46,15 @@
     </script>
 
     <!-- The line below must be kept intact for Sencha Cmd to build your application -->
-    <script id="microloader" data-app="cdf0dcc1-9fee-4c65-96dc-debaa9ccc988" type="text/javascript" src="bootstrap.js"></script>
-    <link rel="stylesheet" type="text/css"  href="//cdnjs.cloudflare.com/ajax/libs/extjs/6.2.0/packages/charts/classic/triton/resources/charts-all.css">
+    <script id="microloader" data-app="cdf0dcc1-9fee-4c65-96dc-debaa9ccc988" type="text/javascript" src="bootstrap.js"></script>   
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6RVfLztoQXaTROdOYwU8Ux2ZTGbaf6Ro"  type="text/javascript"></script>    
 </head>
-<body></body>
+<body>
+    <div id="page-loader">
+        <div style="position:absolute;  left:50%; top:50%;" >
+            <img style=" width:20px; height:20px;" src="resources/images/loader.gif" />
+            <span id="page-loader-msg" style="color: black;">Loading Framework...</span>
+        </div>
+    </div>
+</body>
 </html>

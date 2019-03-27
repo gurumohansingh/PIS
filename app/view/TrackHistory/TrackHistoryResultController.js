@@ -12,6 +12,7 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryResultController', {
     loadPagingStore:function( remoteStore, records, successful, operation, eOpts ) 
     {   
         var me=this,data={},marks=[];
+        me.getView().setLoading(false);
         var pagingStore=me.getViewModel().getStore('trackHistoryPaging');
         pagingStore.getProxy().setData(remoteStore.getRange());
         pagingStore.load();
@@ -69,8 +70,9 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryResultController', {
     },
     loadHistorydata:function()
     {      
-        
+
             var me=this,view=me.getView();
+            view.setLoading(true);
             if(view.lookupReference('trackHistoryfilter').getForm().isValid()){
             var form=view.lookupReference('trackHistoryfilter').getForm().getValues();
             var trainNumber=form.trainNumber;
@@ -78,7 +80,7 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryResultController', {
             end=form.endDate.concat(" ",form.endDateTime)
             
             var trackHistoryRemote=  me.getViewModel().getStore('trackHistory');
-            trackHistoryRemote.getProxy().setUrl('http://47.254.213.69:8080/get_data');
+            trackHistoryRemote.getProxy().setUrl(PIS.Constants.ENDPOINT_HOST+'get_data');
             trackHistoryRemote.getProxy().extraParams={start:start, end:end, setnum:trainNumber}
             trackHistoryRemote.on('load',this.loadPagingStore,this);
             trackHistoryRemote.load();

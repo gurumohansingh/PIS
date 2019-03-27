@@ -487,9 +487,9 @@
 }
 /* F:/projects/zaru/PIS/ext/classic/theme-neutral/sass/src/tab/Bar.scss:168 */
 .x-tab-bar-default {
-    background-color: #313131;
+    background-color: #cbdbef;
     border-style: solid;
-    border-color: #d0d0d0;
+    border-color: #99bce8;
 }
 /* F:/projects/zaru/PIS/ext/classic/theme-neutral/sass/src/tab/Bar.scss:177 */
 .x-tab-bar-default-top {
@@ -582,8 +582,8 @@
 /* F:/projects/zaru/PIS/ext/classic/theme-neutral/sass/src/tab/Bar.scss:319 */
 .x-tab-bar-strip-default {
     border-style: solid;
-    border-color: #d0d0d0;
-    background-color: #eaeaea;
+    border-color: #99bce8;
+    background-color: #deecfd;
 }
 /* F:/projects/zaru/PIS/ext/classic/theme-neutral/sass/src/tab/Bar.scss:326 */
 .x-tab-bar-top > .x-tab-bar-strip-default {
@@ -656,13 +656,13 @@
 /* F:/projects/zaru/PIS/ext/classic/theme-neutral/sass/src/tab/Bar.scss:411 */
 .x-tab-bar-default-top {
     background-image: none;
-    background-color: #313131;
-    background-image: -webkit-gradient(linear, top, bottom, color-stop(0%, #3e3d3d), color-stop(0%, #313131));
-    background-image: -webkit-linear-gradient(top, #3e3d3d, #313131);
-    background-image: -moz-linear-gradient(top, #3e3d3d, #313131);
-    background-image: -o-linear-gradient(top, #3e3d3d, #313131);
-    background-image: -ms-linear-gradient(top, #3e3d3d, #313131);
-    background-image: linear-gradient(top, #3e3d3d, #313131);
+    background-color: #cbdbef;
+    background-image: -webkit-gradient(linear, top, bottom, color-stop(0%, #dde8f5), color-stop(0%, #cbdbef));
+    background-image: -webkit-linear-gradient(top, #dde8f5, #cbdbef);
+    background-image: -moz-linear-gradient(top, #dde8f5, #cbdbef);
+    background-image: -o-linear-gradient(top, #dde8f5, #cbdbef);
+    background-image: -ms-linear-gradient(top, #dde8f5, #cbdbef);
+    background-image: linear-gradient(top, #dde8f5, #cbdbef);
 }
 /* F:/projects/zaru/PIS/ext/classic/theme-neutral/sass/src/tab/Bar.scss:415 */
 .x-nlg .x-tab-bar-default-top {
@@ -671,13 +671,13 @@
 /* F:/projects/zaru/PIS/ext/classic/theme-neutral/sass/src/tab/Bar.scss:421 */
 .x-tab-bar-default-bottom {
     background-image: none;
-    background-color: #313131;
-    background-image: -webkit-gradient(linear, top, bottom, color-stop(0%, #3e3d3d), color-stop(0%, #313131));
-    background-image: -webkit-linear-gradient(bottom, #3e3d3d, #313131);
-    background-image: -moz-linear-gradient(bottom, #3e3d3d, #313131);
-    background-image: -o-linear-gradient(bottom, #3e3d3d, #313131);
-    background-image: -ms-linear-gradient(bottom, #3e3d3d, #313131);
-    background-image: linear-gradient(bottom, #3e3d3d, #313131);
+    background-color: #cbdbef;
+    background-image: -webkit-gradient(linear, top, bottom, color-stop(0%, #dde8f5), color-stop(0%, #cbdbef));
+    background-image: -webkit-linear-gradient(bottom, #dde8f5, #cbdbef);
+    background-image: -moz-linear-gradient(bottom, #dde8f5, #cbdbef);
+    background-image: -o-linear-gradient(bottom, #dde8f5, #cbdbef);
+    background-image: -ms-linear-gradient(bottom, #dde8f5, #cbdbef);
+    background-image: linear-gradient(bottom, #dde8f5, #cbdbef);
 }
 /* F:/projects/zaru/PIS/ext/classic/theme-neutral/sass/src/tab/Bar.scss:425 */
 .x-nlg .x-tab-bar-default-bottom {
@@ -686,13 +686,13 @@
 /* F:/projects/zaru/PIS/ext/classic/theme-neutral/sass/src/tab/Bar.scss:431 */
 .x-tab-bar-default-left {
     background-image: none;
-    background-color: #313131;
-    background-image: -webkit-gradient(linear, top, bottom, color-stop(0%, #3e3d3d), color-stop(0%, #313131));
-    background-image: -webkit-linear-gradient(left, #3e3d3d, #313131);
-    background-image: -moz-linear-gradient(left, #3e3d3d, #313131);
-    background-image: -o-linear-gradient(left, #3e3d3d, #313131);
-    background-image: -ms-linear-gradient(left, #3e3d3d, #313131);
-    background-image: linear-gradient(left, #3e3d3d, #313131);
+    background-color: #cbdbef;
+    background-image: -webkit-gradient(linear, top, bottom, color-stop(0%, #dde8f5), color-stop(0%, #cbdbef));
+    background-image: -webkit-linear-gradient(left, #dde8f5, #cbdbef);
+    background-image: -moz-linear-gradient(left, #dde8f5, #cbdbef);
+    background-image: -o-linear-gradient(left, #dde8f5, #cbdbef);
+    background-image: -ms-linear-gradient(left, #dde8f5, #cbdbef);
+    background-image: linear-gradient(left, #dde8f5, #cbdbef);
 }
 /* F:/projects/zaru/PIS/ext/classic/theme-neutral/sass/src/tab/Bar.scss:435 */
 .x-nlg .x-tab-bar-default-left {
@@ -701,13 +701,13 @@
 /* F:/projects/zaru/PIS/ext/classic/theme-neutral/sass/src/tab/Bar.scss:441 */
 .x-tab-bar-default-right {
     background-image: none;
-    background-color: #313131;
-    background-image: -webkit-gradient(linear, top, bottom, color-stop(0%, #3e3d3d), color-stop(0%, #313131));
-    background-image: -webkit-linear-gradient(right, #3e3d3d, #313131);
-    background-image: -moz-linear-gradient(right, #3e3d3d, #313131);
-    background-image: -o-linear-gradient(right, #3e3d3d, #313131);
-    background-image: -ms-linear-gradient(right, #3e3d3d, #313131);
-    background-image: linear-gradient(right, #3e3d3d, #313131);
+    background-color: #cbdbef;
+    background-image: -webkit-gradient(linear, top, bottom, color-stop(0%, #dde8f5), color-stop(0%, #cbdbef));
+    background-image: -webkit-linear-gradient(right, #dde8f5, #cbdbef);
+    background-image: -moz-linear-gradient(right, #dde8f5, #cbdbef);
+    background-image: -o-linear-gradient(right, #dde8f5, #cbdbef);
+    background-image: -ms-linear-gradient(right, #dde8f5, #cbdbef);
+    background-image: linear-gradient(right, #dde8f5, #cbdbef);
 }
 /* F:/projects/zaru/PIS/ext/classic/theme-neutral/sass/src/tab/Bar.scss:445 */
 .x-nlg .x-tab-bar-default-right {
@@ -1425,15 +1425,15 @@
 }
 /* F:/projects/zaru/PIS/ext/classic/theme-classic/sass/src/layout/container/Accordion.scss:1 */
 .x-accordion-hd {
-    -webkit-box-shadow: inset 0 0 #e5e5e5;
-    -moz-box-shadow: inset 0 0 #e5e5e5;
-    box-shadow: inset 0 0 #e5e5e5;
+    -webkit-box-shadow: inset 0 0 #d9e7f8;
+    -moz-box-shadow: inset 0 0 #d9e7f8;
+    box-shadow: inset 0 0 #d9e7f8;
 }
 /* F:/projects/zaru/PIS/ext/classic/theme-classic/sass/src/layout/container/Accordion.scss:4 */
 .x-accordion-hd-sibling-expanded {
-    -webkit-box-shadow: inset 0 1px #4b4b4b;
-    -moz-box-shadow: inset 0 1px #4b4b4b;
-    box-shadow: inset 0 1px #4b4b4b;
+    -webkit-box-shadow: inset 0 1px #f3f7fb;
+    -moz-box-shadow: inset 0 1px #f3f7fb;
+    box-shadow: inset 0 1px #f3f7fb;
 }
 /* F:/projects/zaru/PIS/ext/classic/theme-classic/sass/src/resizer/Resizer.scss:2 */
 .x-resizable-handle-east-over,
@@ -1498,15 +1498,15 @@
 }
 /* F:/projects/zaru/PIS/ext/packages/ux/sass/var/Gauge.scss:28 */
 .x-gauge .x-gauge-track {
-    fill: #f1f1f1;
+    fill: #e0e8f3;
     fill-opacity: 1;
-    stroke: #2b2b2b;
+    stroke: #c0d4ed;
     stroke-opacity: 1;
     stroke-width: 1;
 }
 /* F:/projects/zaru/PIS/ext/packages/ux/sass/var/Gauge.scss:36 */
 .x-gauge .x-gauge-value {
-    fill: #ababab;
+    fill: #73a3e0;
     fill-opacity: 1;
     stroke: none;
     stroke-opacity: 1;
@@ -2033,9 +2033,9 @@ tr.x-grid-subtable-row {
 /* F:/projects/zaru/PIS/ext/packages/ux/classic/sass/src/grid/SubTable.scss:27 */
 .x-grid-subtable-cell {
     border-top: 1px solid #ededed;
-    border-right: 1px solid #252525;
+    border-right: 1px solid #d0d0d0;
     border-bottom: 1px solid #ededed;
-    border-left: 1px solid #252525;
+    border-left: 1px solid #d0d0d0;
 }
 /* F:/projects/zaru/PIS/ext/packages/ux/classic/sass/src/layout/ResponsiveColumn.scss:1 */
 .x-responsivecolumn {

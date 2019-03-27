@@ -5,8 +5,7 @@ Ext.define('PIS.view.announcement.Announcement',{
     requires: [
         'PIS.view.announcement.AnnouncementController',
         'PIS.view.announcement.AnnouncementModel'
-    ],
-    title:'Announcement',
+    ],    
     controller: 'announcement-announcement',
     viewModel: {
         type: 'announcement-announcement'
@@ -30,7 +29,8 @@ Ext.define('PIS.view.announcement.Announcement',{
         // hidden:true,
         handler:'loadAnnouncement'
     },{
-        type:'plus',
+        xtype:'button',
+        text:'Create',
         tooltip: 'Push new announcement',
         // hidden:true,
         handler:'newAnnouncement'

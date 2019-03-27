@@ -12,20 +12,21 @@ Ext.define('PIS.view.panel.LeftPanel', {
         type: 'panel-leftpanel'
     },    
     items: [
-        {
-            title: 'Notifications',
-            reference: 'notificationsTab',           
-            layout:'fit',
-            items: [{
-                xtype: 'notifications',
-                scrollable: 'y'
-            }]
-        }, {
+       {
             title: 'Announcement',
             reference: 'announcementTab',
             layout:'fit',         
             items: [{
                 xtype: 'announcement',
+                scrollable: 'y'
+            }]
+        }, {
+            title: 'Notifications',
+            reference: 'notificationsTab',
+            hidden:true,
+            layout:'fit',
+            items: [{
+                xtype: 'notifications',
                 scrollable: 'y'
             }]
         }]

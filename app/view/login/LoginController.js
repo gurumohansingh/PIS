@@ -3,6 +3,9 @@ Ext.define('PIS.view.login.LoginController', {
     alias: 'controller.login-login',
     init:function()
     {
+        if (Ext.get('page-loader')) {
+            Ext.get('page-loader').destroy();
+        }
     },
     
     onLoginButtonClick: function(button, e, eOpts) {

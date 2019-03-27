@@ -27,25 +27,24 @@ Ext.define('PIS.view.main.Main', {
         margin: '0 0 0 0',
         maxHeight: 40,
         items: [{
-            xtype: 'toolbar',
+            xtype: 'container',
             itemId: 'headerBar',
+            layout:'hbox',
             padding: 0,
             items: [
                 {
-                    xtype: 'component',
-                    reference: 'senchaLogo',
-                    html: '<h2>LIVE CONSOLE</h2>',
-                    width: 250
+                    xtype: 'image',
+                    reference: 'KTMLOGO',                   
+                    src:'resources/images/KTMB-logo.png',
+                    width: 130,
+                    margin:5,
+                    height:30
                 },
                 {
                     xtype: 'component',
                     reference: 'liveTiming',
+                    margin:'0 0 0 100px',                    
                     html: ''
-                }, '->', {
-                    xtype: 'button',
-                    cursor: 'move',
-                    text: 'Guru Singh'
-
                 }]
         }
         ]
@@ -69,17 +68,6 @@ Ext.define('PIS.view.main.Main', {
             {
                 xtype: 'trackHistoryResult'
             }]
-    }, {
-        region: 'east',
-        title: 'Overall Status',
-        collapsible: true,
-        collapsed: true,
-        split: true,
-        width: 300,
-        layout: 'fit',
-        items: [{
-            xtype: 'statusChart'
-        }]
     }, {
         region: 'center',
         title: 'Map View',
