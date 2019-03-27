@@ -11,6 +11,7 @@ Ext.define('PIS.view.login.Login',{
     viewModel: {
         type: 'login-login'
     },
+    title:'KTMB Command Center: Login',
     closable:false,
     modal:true,
     items: [

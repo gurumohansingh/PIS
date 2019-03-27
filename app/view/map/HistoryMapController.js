@@ -4,7 +4,7 @@ Ext.define('PIS.view.map.HistoryMapController', {
   init: function () {
     var me = this;
     Ext.GlobalEvents.on('showOnMap', me.addLine, me);
-    Ext.GlobalEvents.on('liveTracking', me.liveTracking, me);   
+    Ext.GlobalEvents.on('liveTracking', me.liveTracking, me);
   },
   addMark: function () {
     var map = this.getView().gmap;
@@ -15,8 +15,8 @@ Ext.define('PIS.view.map.HistoryMapController', {
     var lineSymbol = {
       path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW
     };
-    if(PIS.Constants.FLIGHPATH){PIS.Constants.FLIGHPATH.setMap(null);}
-      
+    if (PIS.Constants.FLIGHPATH) { PIS.Constants.FLIGHPATH.setMap(null); }
+
     PIS.Constants.FLIGHPATH = new google.maps.Polyline({
       path: data.marks,
       geodesic: true,
@@ -27,15 +27,15 @@ Ext.define('PIS.view.map.HistoryMapController', {
         icon: lineSymbol,
         offset: '100%'
       }]
-    });    
+    });
     map.setCenter(data.marks[0]),
-    PIS.Constants.FLIGHPATH.setMap(map);
+      PIS.Constants.FLIGHPATH.setMap(map);
 
   },
-  liveTracking: function (onOff) {
-    if(!onOff && ws){
+  liveTracking: function (onOff, trainNumber) {
+    if (!onOff && ws) {
       ws.close();
-      return ;
+      return;
     }
 
     var map = this.getView().lookupReference('googlemap').gmap;
@@ -44,11 +44,11 @@ Ext.define('PIS.view.map.HistoryMapController', {
     var markerInfoStore = {};
     var infoWindowStore = {};
     var bounds;
-    var image = 'http://icons.iconarchive.com/icons/icons8/windows-8/24/Transport-Train-icon.png';
-    ws = new WebSocket('ws://47.254.213.69:8080/live');
+    var image = 'resources/images/greentrain.png';
+    ws = new WebSocket(PIS.Constants.liveHost);
     ws.onopen = function () {
       console.log("Websocket connected!");
-      if(PIS.Constants.FLIGHPATH){PIS.Constants.FLIGHPATH.setMap(null);}
+      if (PIS.Constants.FLIGHPATH) { PIS.Constants.FLIGHPATH.setMap(null); }
       // Web Socket is connected, send data using send()
       // ws.send("Message to send");
     };
@@ -62,7 +62,7 @@ Ext.define('PIS.view.map.HistoryMapController', {
 
 
 
-      wsData = JSON.parse(received_msg);     
+      wsData = JSON.parse(received_msg);
       rcv_Imei = parseFloat(wsData.dev_IMEI)
       rcv_Lat = parseFloat(wsData.veh_lat);
       rcv_Lng = parseFloat(wsData.veh_long);
@@ -78,7 +78,11 @@ Ext.define('PIS.view.map.HistoryMapController', {
       // }
 
       // convert datetime
-
+      if (wsData.veh_speed > 0) {
+        image = 'resources/images/greentrain.png';
+      } else {
+        image = 'resources/images/redtrain.png';
+      }
       var dateString = wsData.veh_datetime;
       var reggie = /(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})/;
       var dateArray = reggie.exec(dateString);
@@ -94,12 +98,28 @@ Ext.define('PIS.view.map.HistoryMapController', {
 
       lat_parsed = parseFloat(latDD) + parseFloat((latMM / 60).toFixed(7));
       long_parsed = parseFloat(longDDD) + parseFloat((longMM / 60).toFixed(7));
-      markerInfoStore[rcv_Imei] = '<p><strong>' + rcv_Imei + '</strong></p><p>Speed: ' + wsData.veh_speed + '</p><p>Coord: ' + lat_parsed + ' , ' + long_parsed + '</p><p>Last received:' + dateObject + '</p>';
-      
+      // set center on first train
+      if (Object.keys(markerStore).length === 0) {
+        map.setCenter(new google.maps.LatLng({ lat: lat_parsed, lng: long_parsed }));
+      }
+      markerInfoStore[rcv_Imei] = `<div>
+                                    <strong>${wsData.set_num}(${wsData.dev_IMEI})</strong></br>
+                                    Speed:  ${wsData.veh_speed}</br>
+                                    Coord:  ${lat_parsed} ,  ${long_parsed}</br>
+                                    Last received: ${dateObject}</br>
+                                    Distance Travelled: ${wsData.distance_travelled}</br>
+                                    TrainNum: ${wsData.train_num}</br>
+                                    Angle: ${wsData.veh_angle}</br>
+                                    Delay: ${wsData.delay}
+                                    <div>
+                                    `;
+
       if (markerStore.hasOwnProperty(rcv_Imei)) {
         infoWindowStore[rcv_Imei].setContent(markerInfoStore[rcv_Imei]);
         markerStore[rcv_Imei].setPosition(new google.maps.LatLng({ lat: lat_parsed, lng: long_parsed }));
+        markerStore[rcv_Imei].setIcon(image);
         bounds = new google.maps.LatLngBounds()
+
         // map.setCenter(new google.maps.LatLng({ lat: lat_parsed, lng: long_parsed }));
 
       } else {
@@ -111,7 +131,7 @@ Ext.define('PIS.view.map.HistoryMapController', {
           position: new google.maps.LatLng({ lat: lat_parsed, lng: long_parsed }),
           title: wsData.set_num + "(" + wsData.train_num + ")",
           map: map,
-          icon:image
+          icon: image
         });
         //Create new marker info window
 
@@ -124,9 +144,9 @@ Ext.define('PIS.view.map.HistoryMapController', {
           infowindow.open(map, marker);
         });
 
-        //infowindow.open(map, marker);
-        infoWindowStore[rcv_Imei] = infowindow;
-        markerStore[rcv_Imei] = marker;
+        //infowindow.open(map, marker);       
+          infoWindowStore[rcv_Imei] = infowindow;
+          markerStore[rcv_Imei] = marker;   
 
       }
     };
@@ -135,13 +155,13 @@ Ext.define('PIS.view.map.HistoryMapController', {
       console.log("Connection is closed...");
       removeAllLive();
     };
-    var removeAllLive=function(){
-      for (var key in markerStore){ 
+    var removeAllLive = function () {
+      for (var key in markerStore) {
         markerStore[key].setMap(null);
       }
-        markerStore = null;
-        markerInfoStore = null;
-        infoWindowStore = null;
+      markerStore = null;
+      markerInfoStore = null;
+      infoWindowStore = null;
     }
   }
 });

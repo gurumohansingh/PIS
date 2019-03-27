@@ -48,7 +48,10 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryResultController', {
             endDate=this.getView().lookupReference('endDate'),
             startDateTime=this.getView().lookupReference('startDateTime'),
             endDateTime=this.getView().lookupReference('endDateTime'),
-            SearchBtn=this.getView().lookupReference('SearchBtn')
+            SearchBtn=this.getView().lookupReference('SearchBtn'),
+            toggelLive=this.getView().lookupReference('toggelLive'),
+            trainNumber=this.getView().lookupReference('trainNumber')
+
         if(newValue==true)
         {
             startDate.setDisabled(true);
@@ -56,7 +59,8 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryResultController', {
             startDateTime.setDisabled(true);
             endDateTime.setDisabled(true);
             SearchBtn.setDisabled(true);
-            Ext.GlobalEvents.fireEvent('liveTracking',true);
+            toggelLive.setDisabled(true);
+            Ext.GlobalEvents.fireEvent('liveTracking',true,trainNumber);
         }
         else
         {
@@ -65,7 +69,8 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryResultController', {
             startDateTime.setDisabled(false);
             endDateTime.setDisabled(false);
             SearchBtn.setDisabled(false);
-            Ext.GlobalEvents.fireEvent('liveTracking',false);
+            toggelLive.setDisabled(false);
+            Ext.GlobalEvents.fireEvent('liveTracking',false,trainNumber);
         }
     },
     loadHistorydata:function()
@@ -95,12 +100,12 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryResultController', {
             cors: true,
             useDefaultXhrHeader: false,
             success:function(result){
-              trainStore.loadData(Ext.JSON.decode(Ext.JSON.decode(result.responseText)),false);
+              trainStore.loadData(Ext.JSON.decode(Ext.JSON.decode(result.responseText)),true);
+              
             },
             failure: function(error){
                console.log('Load trail List failed. Please try again.');
             }
         })
     }
-    
 });

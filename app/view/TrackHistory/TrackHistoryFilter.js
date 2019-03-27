@@ -30,11 +30,13 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryFilter', {
             xtype: 'combo',
             displayField: 'setnum',
             valueField: 'setnum',
-            emptyText:'select',
+            emptyText:'select Train (All Only for Live)',
+            reference:"trainNumber",
             queryMode:'local',
             allowBlank:false,
             width: 200,
             name:'trainNumber',
+            forceSelection:true, 
             bind:{
                 store:'{trains}'
             }
@@ -44,6 +46,7 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryFilter', {
             fieldLabel:'Live',
             width:70,
             labelWidth:30,
+            reference:'toggelLive',
             listeners:{
                 change:'toggelLive'
             }

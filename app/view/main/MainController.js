@@ -22,7 +22,7 @@ Ext.define('PIS.view.main.MainController', {
     },
     
     liveTiming:function()
-    {debugger
+    {
         var liveTiming=this.getView().lookupReference('liveTiming')
         var task, clock;               
         task = {

@@ -43,10 +43,15 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryResultModel', {
             pageSize: 1000
         },
         trains:{
-            fields: [              
+            fields: [
                 {name: 'setnum', type: 'string'}
             ],
-            storeId:'trains'
+            data:[{'setnum':'All'}],
+            storeId:'trains',
+            sorters: {
+                property : 'setnum',
+                direction: 'ASC'
+            }
         }
     }
 
