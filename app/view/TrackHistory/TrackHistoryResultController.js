@@ -107,5 +107,39 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryResultController', {
                console.log('Load trail List failed. Please try again.');
             }
         })
-    }
+    },
+    generateExcel:function()
+    {
+        var view=this.getView();
+        var parantView=view.parentView;
+        if(view.lookupReference('trackHistoryfilter').getForm().isValid()){
+            var form=view.lookupReference('trackHistoryfilter').getForm().getValues();
+            var trainNumber=form.trainNumber;
+            var start=form.startDate.concat(" ",form.startDateTime),
+            end=form.endDate.concat(" ",form.endDateTime)
+            window.open('http://47.254.213.69:8080/get_data?start='+start+'&end='+end+'&setnum='+trainNumber+'&download=xlsx') 
+           
+        }
+        else
+        {
+            Ext.Msg.alert('Download Excel','Please check the Filter.');
+        }
+    },
+    generateCSV:function()
+    {
+        var view=this.getView();
+        var parantView=view.parentView;
+        if(view.lookupReference('trackHistoryfilter').getForm().isValid()){
+            var form=view.lookupReference('trackHistoryfilter').getForm().getValues();
+            var trainNumber=form.trainNumber;
+            var start=form.startDate.concat(" ",form.startDateTime),
+            end=form.endDate.concat(" ",form.endDateTime)
+            window.open('http://47.254.213.69:8080/get_data?start='+start+'&end='+end+'&setnum='+trainNumber+'&download=csv') 
+           
+        }else
+        {
+            Ext.Msg.alert('Download CSV','Please check the Filter.');
+        }
+    },
+    
 });

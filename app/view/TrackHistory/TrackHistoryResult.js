@@ -59,15 +59,32 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryResult', {
     dockedItems: [{
         xtype: 'toolbar',
         dock: 'bottom',
-        items: [{
-            xtype: 'tbfill'
-        },
+        items: [
+            {
+                xtype: 'tbfill'
+            },
         {
             xtype: 'pagingtoolbar',
             displayInfo: true,
             bind:{
                 store: '{trackHistoryPaging}'
             }
+        },              
+        {
+            xtype: 'button',
+            text:'Excel',
+            width:70,
+            icon:'resources/images/Excel.png',
+            displayInfo: true,
+            handler:'generateExcel'
+        },       
+        {
+            xtype: 'button',
+            text:'CSV',
+            width:70,
+            icon:'resources/images/csv-icon.png',
+            displayInfo: true,
+            handler:'generateCSV'
         },
         {
             xtype: 'tbfill'
