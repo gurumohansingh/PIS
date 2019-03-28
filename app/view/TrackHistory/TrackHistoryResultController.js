@@ -49,7 +49,7 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryResultController', {
             startDateTime=this.getView().lookupReference('startDateTime'),
             endDateTime=this.getView().lookupReference('endDateTime'),
             SearchBtn=this.getView().lookupReference('SearchBtn'),
-            toggelLive=this.getView().lookupReference('toggelLive'),
+           
             trainNumber=this.getView().lookupReference('trainNumber')
 
         if(newValue==true)
@@ -59,7 +59,7 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryResultController', {
             startDateTime.setDisabled(true);
             endDateTime.setDisabled(true);
             SearchBtn.setDisabled(true);
-            toggelLive.setDisabled(true);
+          
             Ext.GlobalEvents.fireEvent('liveTracking',true,trainNumber);
         }
         else
@@ -69,7 +69,7 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryResultController', {
             startDateTime.setDisabled(false);
             endDateTime.setDisabled(false);
             SearchBtn.setDisabled(false);
-            toggelLive.setDisabled(false);
+           
             Ext.GlobalEvents.fireEvent('liveTracking',false,trainNumber);
         }
     },
