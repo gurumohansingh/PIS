@@ -13,8 +13,7 @@
     "indexHtmlPath": "index.html",
     "classpath": [
         "app",
-        "${toolkit.name}/src",
-        "${workspace.dir}/lib/geoext/src"
+        "${toolkit.name}/src"
     ],
     "overrides": [
         "overrides",
@@ -136,12 +135,6 @@
             // Remove this entry to individually load sources from the framework.
             {
                 "path": "${framework.dir}/build/ext-all-rtl-debug.js"
-            },
-            {
-                "path": "${workspace.dir}/lib/openlayers/ol-debug.js"
-            },
-            {
-                "path": "${workspace.dir}/lib/openlayers/ol-layerswitcher.js"
             }
         ]
     },
@@ -194,12 +187,6 @@
         },
         {
             "path": "override.css"
-        },
-        {
-            "path": "${workspace.dir}/lib/openlayers/ol.css"
-        },
-        {
-            "path": "${workspace.dir}/lib/openlayers/ol-layerswitcher.css"
         }
     ],
     /**
