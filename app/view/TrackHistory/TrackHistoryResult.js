@@ -5,7 +5,8 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryResult', {
     requires: [
         'PIS.view.TrackHistory.TrackHistoryResultController',
         'PIS.view.TrackHistory.TrackHistoryResultModel',
-        'PIS.overrides.form.field.VTypes'
+        'PIS.overrides.form.field.VTypes',
+        'Ext.grid.filters.Filters'
     ],
     maxHeight:280,
     controller: 'trackhistory-trackhistoryresult',
@@ -73,7 +74,7 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryResult', {
         {
             xtype: 'button',
             text:'Excel',
-            width:70,
+            width:100,
             icon:'resources/images/Excel.png',
             displayInfo: true,
             handler:'generateExcel'
@@ -81,7 +82,7 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryResult', {
         {
             xtype: 'button',
             text:'CSV',
-            width:70,
+            width:100,
             icon:'resources/images/csv-icon.png',
             displayInfo: true,
             handler:'generateCSV'

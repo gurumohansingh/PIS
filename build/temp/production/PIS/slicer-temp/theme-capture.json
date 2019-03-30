@@ -782,40 +782,6 @@
         "h": 22,
         "w": 100,
         "x": 10,
-        "y": 982
-      },
-      "frame": {
-        "b": 3,
-        "l": 3,
-        "r": 3,
-        "t": 3
-      },
-      "gradient": "top",
-      "id": "button-1034",
-      "radius": {
-        "bl": 3,
-        "br": 3,
-        "tl": 3,
-        "tr": 3
-      },
-      "slices": {
-        "corners": "images/btn/btn-default-toolbar-small-focus-corners.gif",
-        "frame_bg": "images/btn/btn-default-toolbar-small-focus-fbg.gif",
-        "sides": "images/btn/btn-default-toolbar-small-focus-sides.gif"
-      },
-      "stretch": "bottom"
-    },
-    {
-      "border": {
-        "b": 1,
-        "l": 1,
-        "r": 1,
-        "t": 1
-      },
-      "box": {
-        "h": 22,
-        "w": 100,
-        "x": 10,
         "y": 1014
       },
       "frame": {
@@ -985,40 +951,6 @@
         "h": 32,
         "w": 100,
         "x": 10,
-        "y": 1226
-      },
-      "frame": {
-        "b": 3,
-        "l": 3,
-        "r": 3,
-        "t": 3
-      },
-      "gradient": "top",
-      "id": "button-1041",
-      "radius": {
-        "bl": 3,
-        "br": 3,
-        "tl": 3,
-        "tr": 3
-      },
-      "slices": {
-        "corners": "images/btn/btn-default-toolbar-medium-focus-corners.gif",
-        "frame_bg": "images/btn/btn-default-toolbar-medium-focus-fbg.gif",
-        "sides": "images/btn/btn-default-toolbar-medium-focus-sides.gif"
-      },
-      "stretch": "bottom"
-    },
-    {
-      "border": {
-        "b": 1,
-        "l": 1,
-        "r": 1,
-        "t": 1
-      },
-      "box": {
-        "h": 32,
-        "w": 100,
-        "x": 10,
         "y": 1268
       },
       "frame": {
@@ -1174,40 +1106,6 @@
         "corners": "images/btn/btn-default-toolbar-large-over-corners.gif",
         "frame_bg": "images/btn/btn-default-toolbar-large-over-fbg.gif",
         "sides": "images/btn/btn-default-toolbar-large-over-sides.gif"
-      },
-      "stretch": "bottom"
-    },
-    {
-      "border": {
-        "b": 1,
-        "l": 1,
-        "r": 1,
-        "t": 1
-      },
-      "box": {
-        "h": 40,
-        "w": 100,
-        "x": 10,
-        "y": 1536
-      },
-      "frame": {
-        "b": 3,
-        "l": 3,
-        "r": 3,
-        "t": 3
-      },
-      "gradient": "top",
-      "id": "button-1048",
-      "radius": {
-        "bl": 3,
-        "br": 3,
-        "tl": 3,
-        "tr": 3
-      },
-      "slices": {
-        "corners": "images/btn/btn-default-toolbar-large-focus-corners.gif",
-        "frame_bg": "images/btn/btn-default-toolbar-large-focus-fbg.gif",
-        "sides": "images/btn/btn-default-toolbar-large-focus-sides.gif"
       },
       "stretch": "bottom"
     },
