@@ -13,14 +13,23 @@ Ext.define('PIS.view.announcement.Announcement',{
     defaults:{
         xtype:'panel',
         collapsible:true,
-        collapsed:false,       
-        closable:true,
+        collapsed:false,
+        //closable:true,
         style: {
             "word-wrap": 'break-word'
-          },
-         listeners:{
-            close:'deleteAnnouncement' 
-         } 
+          },        
+         buttons:[{
+            text:'Edit',
+            tooltip: 'Edit Announcement',            
+            handler:'editAnnouncement',
+            scale : "small"
+        },{
+            text:'Delete',
+            tooltip: 'Delete',            
+            handler:'deleteAnnouncement',
+            scale : "small"
+        }
+        ]
     }, 
     items:[],
     tools:[{

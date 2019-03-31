@@ -1,5 +1,5 @@
 
-Ext.define('PIS.view.announcement.NewAnnouncement',{
+Ext.define('PIS.view.announcement.NewAnnouncement', {
     extend: 'Ext.window.Window',
 
     requires: [
@@ -11,44 +11,78 @@ Ext.define('PIS.view.announcement.NewAnnouncement',{
     viewModel: {
         type: 'announcement-newannouncement'
     },
-    title:'New Announcement',
-    modal:true,
-    items:[{
-        xtype:'form',
-        layout:'vbox',
-        buttonAlign : 'center', 
-        reference:'newAnnouncement',       
-        defaults:{
-            width:300,
-            labelWidth:70,
-            margin:15,
-            allowBlank:false
+    title: 'New Announcement',
+    modal: true,
+    items: [{
+        xtype: 'form',
+        layout: 'vbox',
+        buttonAlign: 'center',
+        reference: 'newAnnouncement',
+        defaults: {
+            width: 400,
+            labelWidth: 70,
+            margin: 15,
+            allowBlank: false
         },
-        items:[{
-            xtype:'textfield',
-            fieldLabel:'Text',
-            name:'text'
-        },{
-            xtype:'datefield',
-            fieldLabel:'Start',
-            name:'start',
-            format:'Y-m-d'
+        items: [{
+            xtype: 'textareafield',
+            fieldLabel: 'Text',
+            name: 'text'
         },
         {
-           xtype:'datefield',
-           fieldLabel:'End',
-           name:'end',
-           format:'Y-m-d'
-        }],
+            xtype: 'container',
+            layout: 'hbox',
+            items: [{
+
+                xtype: 'datefield',
+                fieldLabel: 'Start',
+                labelWidth: 70,
+                name: 'start',
+                format: 'Y-m-d'
+            },
+            {
+                xtype: 'timefield',
+                format: 'H:i:s',
+                name: 'startDateTime',
+                reference: 'startDateTime',
+                minValue: '00:00:00',
+                maxValue: '24:00:00',
+                allowBlank: false,
+                increment: 60,
+                anchor: '100%'
+            }]
+        },
+        {
+            xtype: 'container',
+            layout: 'hbox',
+            items: [
+                {
+                    xtype: 'datefield',
+                    fieldLabel: 'End',
+                    labelWidth: 70,
+                    name: 'end',
+                    format: 'Y-m-d'
+                }, {
+                    xtype: 'timefield',
+                    format: 'H:i:s',
+                    name: 'endDateTime',
+                    minValue: '00:00:00',
+                    maxValue: '24:00:00',
+                    reference: 'endDateTime',
+                    allowBlank: false,
+                    increment: 60
+                }]
+        }
+        ],
         buttons: [{
             text: 'Submit',
             formBind: true, //only enabled once the form is valid
             disabled: true,
-            handler:'addAnnouncement'
-        },{
-            text:'Cancel',
-            handler:'close'
+            handler: 'addAnnouncement'
+        }, {
+            text: 'Cancel',
+            handler: 'close'
         }]
     }]
-    
+
 });

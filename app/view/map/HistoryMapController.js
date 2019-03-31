@@ -103,7 +103,7 @@ Ext.define('PIS.view.map.HistoryMapController', {
         map.setCenter(new google.maps.LatLng({ lat: lat_parsed, lng: long_parsed }));
       }
       markerInfoStore[rcv_Imei] = `<div>
-                                    <strong>${wsData.set_num}(${wsData.dev_IMEI})</strong></br>
+                                    <strong>${wsData.set_num}</strong></br>
                                     Speed:  ${wsData.veh_speed}</br>
                                     Coord:  ${lat_parsed} ,  ${long_parsed}</br>
                                     Last received: ${dateObject}</br>
