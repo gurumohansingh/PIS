@@ -94,15 +94,16 @@ Ext.define('PIS.view.TrackHistory.TrackHistoryResult', {
     }, {
         xtype: 'toolbar',
         dock: 'top',
-        items: [{
-            xtype: 'tbfill'
-        },
+        items: [
+            {
+                xtype: 'tbfill'
+            },
         {
             xtype: 'trackHistoryfilter',
             displayInfo: true,
-            margin:5
-        },
-        {
+            margin:5,
+            scrollable:true            
+        },{
             xtype: 'tbfill'
         }
         ]

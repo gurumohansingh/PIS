@@ -24,24 +24,19 @@ Ext.define('PIS.view.login.Login',{
                     margin: '0 0 20 0',
                     fieldLabel: 'Username',
                     labelAlign: 'right',
-                    msgTarget: 'title',
                     name: 'identity',
                     allowBlank: false,
                     emptyText:'Enter your Username.',
-                    blankText: 'Enter your Username.',
-                    regexText: 'Enter your username.'
                 },
                 {
                     xtype: 'textfield',
                     margin: '0 0 10 0',
                     fieldLabel: 'Password',
                     labelAlign: 'right',
-                    msgTarget: 'title',
                     name: 'password',
                     inputType: 'password',
                     allowBlank: false,
-                    emptyText:'Enter your password.',
-                    blankText: 'Enter your password.'
+                    emptyText:'Enter your password.'    
                 },
                 {
                     xtype: 'button',

@@ -2,16 +2,20 @@
 Ext.define('PIS.view.TrackHistory.TrackHistoryFilter', {
     extend: 'Ext.form.Panel',
     xtype: 'trackHistoryfilter', 
-    layout: {
-       type: 'hbox',
-       pack:'center'
-    },
+    layout:'hbox',
     defaults:{
         margin:'0 0 0 5px'  
     },
-    fieldLabel: 'Filters',
+    fieldLabel: 'Filters',   
     reference:'trackHistoryfilter',
-    items: [        
+    scrollable:true,
+    plugins: 'responsive',
+    responsiveConfig: {
+        'width < 400': { width : 300 }, 'width >= 1200': {
+        width : 1200
+        }
+        },
+    items: [
         {
             xtype: 'combo',
             displayField: 'name',

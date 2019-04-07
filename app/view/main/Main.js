@@ -63,7 +63,7 @@ Ext.define('PIS.view.main.Main', {
         title: 'Filter Data',
         collapsible: true,
         split: true,
-        minHeight: 300,       
+        layout:'fit',      
         items: [
             {
                 xtype: 'trackHistoryResult'

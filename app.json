@@ -2,13 +2,10 @@
     "name": "PIS",
     "namespace": "PIS",
     "version": "1.0.0.0",
-    "framework": "ext",
-    "toolkit": "classic",
-    "theme": "classic",
+    "framework": "ext",    
     "requires": [
         "ext-ux",
-        "font-awesome",
-        "charts"
+        "font-awesome"
     ],
     "indexHtmlPath": "index.html",
     "classpath": [
@@ -56,15 +53,6 @@
           
             {
                 "path": "${framework.dir}/build/ext-all-rtl-debug.js"
-            }
-        ]
-    },
-   
-    "modern": {
-        "js": [
-           
-            {
-                "path": "${framework.dir}/build/ext-modern-all-debug.js"
             }
         ]
     },
